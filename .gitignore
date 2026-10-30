@@ -1,2 +1,16 @@
 ._*
 .DS_Store
+
+# 비밀 파일·인증서 (실수로 올라가지 않게)
+.env
+.env.*
+*.p8
+*.p12
+*.pem
+*.key
+*.cer
+*.mobileprovision
+*.keychain*
+*secret*
+*credential*
+service-account*.json
