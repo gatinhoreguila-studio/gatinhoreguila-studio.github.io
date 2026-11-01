@@ -1,3 +1,304 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gatinho Reguila</title><style>:root{--bg:#faf8f5;--fg:#1d1b19;--mute:#6b655e;--line:#e4dfd8}@media (prefers-color-scheme:dark){:root{--bg:#141312;--fg:#efebe6;--mute:#a39c94;--line:#2c2a27}}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}main{max-width:640px;margin:0 auto;padding:48px 20px 80px}h1{font-size:28px;letter-spacing:.02em;margin:0 0 4px}h2{font-size:17px;margin:32px 0 6px}p,li{color:var(--fg)}.sub{color:var(--mute);margin:0 0 32px}a{color:inherit}footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}</style></head><body><main><h1>Gatinho Reguila</h1><p class="sub">Small apps and games from Porto.</p>
-<h2>EJECT</h2><p>Film photo books from your camera roll. <a href="eject/support/">Support</a> · <a href="eject/privacy/">Privacy</a></p>
-<footer>Gatinho Reguila Unipessoal Lda · Porto, Portugal · <a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a></footer></main></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gatinho Reguila · GRGS</title>
+<meta name="description" content="GRGS (Gatinho Reguila) — a tiny game studio in Porto. 작은 게임 회사. 동물농장, 부엉 무림탑, EJECT.">
+<meta name="theme-color" content="#8fd0f5">
+<meta property="og:title" content="Gatinho Reguila · GRGS">
+<meta property="og:description" content="A tiny game studio in Porto, building every day.">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --sky:#8fd0f5; --bg:#eef3e4; --panel:#fffaf0; --panel-2:#f5ecd6; --ink:#2a1d14; --muted:#6d5c4b; --line:#d9c8a6;
+  --wood:#8a5a34; --wood-d:#5b3a20; --navy:#163a7a; --gold:#ffd24a; --good:#2f8a3e;
+  --f-title:"Jua","IBM Plex Sans KR",system-ui,sans-serif; --f-body:"IBM Plex Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --bg:#141a24; --panel:#1f2633; --panel-2:#262e3d; --ink:#f1ead8; --muted:#b6aa94; --line:#3a4356; --wood:#b07a48; --wood-d:#8a5a34; --navy:#9cc0ff; --gold:#ffd84d; --good:#6fd08a; color-scheme:dark; } }
+:root[data-theme="dark"]{ --bg:#141a24; --panel:#1f2633; --panel-2:#262e3d; --ink:#f1ead8; --muted:#b6aa94; --line:#3a4356; --wood:#b07a48; --wood-d:#8a5a34; --navy:#9cc0ff; --gold:#ffd84d; --good:#6fd08a; color-scheme:dark; }
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--f-title);font-weight:400;margin:0;text-wrap:balance}
+a{color:inherit}
+[hidden]{display:none!important}
+.wrap{max-width:960px;margin:0 auto;padding:14px max(16px,env(safe-area-inset-right)) 56px max(16px,env(safe-area-inset-left));display:grid;gap:18px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px 16px;flex-wrap:wrap}
+.plaque{display:inline-flex;align-items:center;gap:10px;background:var(--wood);color:#fff6dc;padding:7px 16px 7px 10px;border:3px solid var(--wood-d);box-shadow:0 4px 0 var(--wood-d);border-radius:6px;text-decoration:none}
+.plaque img{width:30px;height:30px;image-rendering:pixelated;border-radius:6px}
+.plaque h1{font-size:22px;line-height:1.1;letter-spacing:.02em}
+.plaque small{display:block;font:600 11.5px var(--f-body);opacity:.85}
+.lang{display:flex;gap:6px}
+.lang button{appearance:none;cursor:pointer;font:700 12.5px var(--f-body);color:var(--ink);background:var(--panel);border:2px solid var(--ink);border-radius:999px;padding:5px 11px;box-shadow:0 2px 0 var(--ink)}
+.lang button[aria-pressed="true"]{background:var(--gold);color:#2a1d14}
+.lang button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* 사옥 */
+.office{position:relative;border:3px solid var(--wood-d);border-radius:10px;overflow:hidden;background:#3b2a1c;box-shadow:0 5px 0 var(--wood-d);aspect-ratio:160/126}
+.office canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;display:block}
+.office .stage{position:absolute;inset:0;overflow:hidden}
+.sp{position:absolute;image-rendering:pixelated;transform-origin:50% 100%;will-change:transform}
+.sp.flip img{transform:scaleX(-1)}
+.sp img{display:block;width:100%;height:100%;image-rendering:pixelated}
+.bub{position:absolute;left:50%;bottom:100%;transform:translate(-50%,-4px);background:#fffaf0;color:#2a1d14;border:2px solid #2a1d14;border-radius:8px;padding:2px 7px;font:700 11px/1.3 var(--f-body);white-space:nowrap;opacity:0;transition:opacity .25s;pointer-events:none}
+.bub:after{content:"";position:absolute;left:50%;top:100%;width:6px;height:6px;background:#fffaf0;border-right:2px solid #2a1d14;border-bottom:2px solid #2a1d14;transform:translate(-50%,-4px) rotate(45deg)}
+.bub.on{opacity:1}
+.sp.low .bub{bottom:auto;top:100%;transform:translate(-50%,4px)}
+.sp.low .bub:after{top:auto;bottom:100%;transform:translate(-50%,4px) rotate(-135deg)}
+.lbl{position:absolute;left:78%;transform:translateY(-50%);font:700 11px/1 var(--f-body);color:#fff6dc;background:rgba(42,29,20,.78);border-radius:4px;padding:3px 6px;pointer-events:none;letter-spacing:.02em}
+@media (max-width:560px){ .lbl{font-size:9.5px;padding:2px 5px} .bub{font-size:9.5px} }
+.hero{display:grid;gap:6px}
+.hero h2{font-size:30px;line-height:1.15}
+.hero p{margin:0;color:var(--muted);font-size:15.5px}
+.status{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font:600 12.5px var(--f-body);color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:4px 11px;background:var(--panel);border:2px solid var(--ink);color:var(--ink);font-weight:700}
+.pill i{width:9px;height:9px;border-radius:50%;background:var(--good);box-shadow:0 0 0 3px color-mix(in srgb,var(--good) 25%,transparent)}
+.pill.off i{background:var(--muted);box-shadow:none}
+
+/* 층별 카드 */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:640px){ .cards{grid-template-columns:minmax(0,1fr)} }
+.card{background:var(--panel);border:2px solid var(--line);border-radius:12px;padding:14px;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:start;min-width:0}
+.card .ic{width:56px;height:56px;display:grid;place-items:center;background:var(--panel-2);border-radius:10px;grid-row:span 3;overflow:hidden}
+.card .ic img{image-rendering:pixelated;width:auto;height:auto;max-width:48px;max-height:44px}
+.card h3{font-size:19px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card h3 .tag{font:700 11px var(--f-body);background:var(--navy);color:#fff;border-radius:999px;padding:2px 8px}
+:root[data-theme="dark"] .card h3 .tag{color:#141a24}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .card h3 .tag{color:#141a24} }
+.card .tag.soon{background:var(--gold);color:#2a1d14}
+.card p{margin:0;color:var(--muted);font-size:13.5px}
+.card .links{font:600 13px var(--f-body);display:flex;gap:10px;flex-wrap:wrap}
+.card .links a{text-decoration:none;border-bottom:2px solid var(--line)}
+.card .links a:hover{border-color:var(--ink)}
+.sec h2{font-size:21px;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.sec h2 small{font:600 12px var(--f-body);color:var(--muted)}
+
+/* 작업 일지 */
+.log{display:grid;gap:6px;background:var(--panel);border:2px solid var(--line);border-radius:12px;padding:12px 14px}
+.log div{display:grid;grid-template-columns:52px 1fr;gap:10px;font-size:13.5px;align-items:start}
+.log time{font:700 11.5px var(--f-body);color:var(--muted);font-variant-numeric:tabular-nums;padding-top:3px}
+.log b{font-family:var(--f-title);font-weight:400;font-size:14px}
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:640px){ .rules{grid-template-columns:minmax(0,1fr)} }
+.rules div{background:var(--panel-2);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.rules b{display:block;font-family:var(--f-title);font-weight:400;font-size:16px;color:var(--wood-d);margin-bottom:2px}
+:root[data-theme="dark"] .rules b{color:var(--gold)}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .rules b{color:var(--gold)} }
+footer{margin-top:10px;padding-top:14px;border-top:2px dashed var(--line);color:var(--muted);font-size:13px;display:grid;gap:4px}
+footer .fl{display:flex;flex-wrap:wrap;gap:6px 14px}
+footer a{text-decoration:none;border-bottom:1.5px solid var(--line)}
+footer .v{font-size:11px;opacity:.7}
+.ko,.en,.pt{display:none} html[data-lang="ko"] .ko,html[data-lang="en"] .en,html[data-lang="pt"] .pt{display:revert}
+span.ko,span.en,span.pt{display:none} html[data-lang="ko"] span.ko,html[data-lang="en"] span.en,html[data-lang="pt"] span.pt{display:inline}
+@media (prefers-reduced-motion:reduce){ .sp{transition:none} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="plaque" href="./" aria-label="GRGS"><img src="icon.png" alt=""><span><h1>GRGS</h1><small>Gatinho Reguila · Porto</small></span></a>
+    <nav class="lang" aria-label="language">
+      <button type="button" data-lang="ko" aria-pressed="true">한국어</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2><span class="ko">작은 게임 회사예요. 매일 만들고 있어요.</span><span class="en">A tiny game studio. Building every day.</span><span class="pt">Um pequeno estúdio de jogos. A construir todos os dias.</span></h2>
+    <p><span class="ko">포르투의 작은 사옥에서 꼬비와 동물 친구들이 게임과 앱을 만들어요. 창문을 눌러 보세요.</span><span class="en">Ggobi the cat and friends make small games and apps in a little building in Porto. Tap the windows.</span><span class="pt">O gato Ggobi e os amigos fazem pequenos jogos e apps num prédio pequeno no Porto. Toque nas janelas.</span></p>
+    <div class="status"><span class="pill" id="pill"><i></i><span id="pillTxt"></span></span><span id="clock"></span></div>
+  </section>
+
+  <div class="office" id="office" aria-label="GRGS pixel office">
+    <canvas id="bg" width="160" height="126"></canvas>
+    <div class="stage" id="stage"></div>
+  </div>
+
+  <section class="sec">
+    <h2><span class="ko">층마다 만드는 것</span><span class="en">What each floor makes</span><span class="pt">O que cada andar faz</span></h2>
+    <div class="cards" id="cards">
+      <article class="card" id="c-farm">
+        <div class="ic"><img data-spr="pig" alt=""></div>
+        <h3>Gumdang Farm <span class="tag"><span class="ko">개발 중</span><span class="en">in development</span><span class="pt">em desenvolvimento</span></span></h3>
+        <p><span class="ko">금당이네 동물농장. 돼지·고양이·곰·펭귄을 하루하루 모으는 느긋한 농장 게임. 웹에서 바로 해요.</span><span class="en">A slow, cozy farm where you collect pigs, cats, bears and penguins a little each day. Plays in the browser.</span><span class="pt">Uma quinta calma onde se juntam porcos, gatos, ursos e pinguins, um pouco cada dia. Joga-se no browser.</span></p>
+        <div class="links"><span class="ko">1층 · 비공개 테스트 중</span><span class="en">1F · private test</span><span class="pt">1.º andar · teste privado</span></div>
+      </article>
+      <article class="card" id="c-owl">
+        <div class="ic"><img data-spr="owl" alt=""></div>
+        <h3>Owl Tower <span class="tag"><span class="ko">개발 중</span><span class="en">in development</span><span class="pt">em desenvolvimento</span></span></h3>
+        <p><span class="ko">부엉 무림탑. 72층 탑을 문제 풀며 오르는 퀴즈 무협. 틀려도 유머로 넘어가요.</span><span class="en">Climb a 72-floor tower by solving puzzles, wuxia style. Wrong answers get a joke, not a lecture.</span><span class="pt">Suba uma torre de 72 andares a resolver enigmas, ao estilo wuxia. Errar dá piada, não sermão.</span></p>
+        <div class="links"><span class="ko">2층 · 비공개 테스트 중</span><span class="en">2F · private test</span><span class="pt">2.º andar · teste privado</span></div>
+      </article>
+      <article class="card" id="c-eject">
+        <div class="ic"><img data-spr="ggobi_sit" alt=""></div>
+        <h3>EJECT <span class="tag soon"><span class="ko">iPhone · 출시 준비</span><span class="en">iPhone · coming soon</span><span class="pt">iPhone · em breve</span></span></h3>
+        <p><span class="ko">사진첩을 고르면 필름 사진집이 나와요. 고를 게 없어요. Nothing to decide.</span><span class="en">Pick photos, get a film photo book. Nothing to decide.</span><span class="pt">Escolha fotos, receba um álbum de filme. Nada para decidir.</span></p>
+        <div class="links"><a href="eject/"><span class="ko">소개</span><span class="en">About</span><span class="pt">Sobre</span></a><a href="eject/support/"><span class="ko">지원</span><span class="en">Support</span><span class="pt">Suporte</span></a><a href="eject/privacy/"><span class="ko">개인정보</span><span class="en">Privacy</span><span class="pt">Privacidade</span></a></div>
+      </article>
+      <article class="card" id="c-lab">
+        <div class="ic"><img data-spr="mole" alt=""></div>
+        <h3><span class="ko">딴짓연구소</span><span class="en">Side-Quest Lab</span><span class="pt">Laboratório</span> <span class="tag"><span class="ko">실험 중</span><span class="en">experiments</span><span class="pt">experiências</span></span></h3>
+        <p><span class="ko">다음 게임의 씨앗을 심는 곳. 작게 만들어 보고, 재미없으면 바로 버려요.</span><span class="en">Where the next game starts as a seed. Build tiny, keep what's fun, drop the rest.</span><span class="pt">Onde o próximo jogo nasce como semente. Fazer pequeno, guardar o que é divertido.</span></p>
+        <div class="links"><span class="ko">4층</span><span class="en">4F</span><span class="pt">4.º andar</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="ko">작업 일지</span><span class="en">Work log</span><span class="pt">Diário de trabalho</span> <small id="logNote"></small></h2>
+    <div class="log" id="log"></div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="ko">우리가 지키는 것</span><span class="en">What we keep</span><span class="pt">O que mantemos</span></h2>
+    <div class="rules">
+      <div><b><span class="ko">작게, 매일</span><span class="en">Small, daily</span><span class="pt">Pequeno, diário</span></b><span class="ko">큰 약속 대신 작은 빌드를 매일 올려요.</span><span class="en">Small builds every day instead of big promises.</span><span class="pt">Builds pequenos todos os dias em vez de grandes promessas.</span></div>
+      <div><b><span class="ko">광고 없음, 추적 없음</span><span class="en">No ads, no tracking</span><span class="pt">Sem anúncios, sem rastreio</span></b><span class="ko">계정도 없어요. 사진과 기록은 기기 안에 있어요.</span><span class="en">No accounts either. Your photos and progress stay on your device.</span><span class="pt">Nem contas. As fotos e o progresso ficam no seu aparelho.</span></div>
+      <div><b><span class="ko">유머 하나씩</span><span class="en">One joke each</span><span class="pt">Uma piada em cada</span></b><span class="ko">모든 게임에 웃을 데가 하나는 있어야 해요.</span><span class="en">Every game must have at least one place to laugh.</span><span class="pt">Todos os jogos têm de ter pelo menos um sítio para rir.</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fl"><b>Gatinho Reguila, Unipessoal Lda</b> · Porto, Portugal · <a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a></div>
+    <div class="fl"><a href="privacy/"><span class="ko">개인정보</span><span class="en">Privacy</span><span class="pt">Privacidade</span></a><a href="support/"><span class="ko">지원</span><span class="en">Support</span><span class="pt">Suporte</span></a><a href="eject/">EJECT</a></div>
+    <div class="v">site v2</div>
+  </footer>
+</div>
+
+<script>
+const SPR={"pig":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAARCAYAAADHeGwwAAABRklEQVR42mNgIANEaZn9j9Iy+0+MHAs5hs+pb4VwGqsxLEGWW3btFCMLA5ng8bXbCMPQxGW1VBkI+gBXEMCAWqArAwMDA8P3mw9QxGW1VBlSGqsZll07xcjAwMDAiMtgbK6DAU51BQyD0QHMEkaYocuunWKM0jL7v3TZUrgiQobALQxzYRBXsmZ40NGIYQlLlJbZ//rQBAaG1Qxww/EZvOQvO0MM808UMXEla5zqWepDExgaVy9gmFPfSrSL0QHM5T+fvsK0gIEGoHstIpiZGlcvoLoFpcHRDKXB0RAfwCKXGgazS4vBI5eBgYFh2bVTjEwwBkyQUgBLnljzAUoxQEQqwuYomMEwwIgr99aHJuC0BDne0A3EmYrg+QHNAGQ2sqVw9mqG//gsYUS2QEFQBJKu379hQGbDEgI+eZLLeWxlPiF5bAAABNerHjFjpi4AAAAASUVORK5CYII=","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAARCAYAAADHeGwwAAABSklEQVR42mNgIANEaZn9j9Iy+0+MHAs5hs+pb4VwGqsxLEGWW3btFCMLA5ng8bXbCMPQxGW1VBkI+gBXEMCAWqArAwMDA8P3mw9QxGW1VBlSGqsZll07xcjAwMDAiMtgbK6DAU51BQyD0QHMEkaYocuunWKM0jL7v3TZUrgiQobALQxzYRBXsmZ40NGIYQlLlJbZ//rQBAaG1Qxww/EZvOQvO0MM808UMXEla5zqWepDExgaVy9gmFPfSrSL0QHM5T+fvsK0gIEGoHstIpiZGlcvoLoFpcHRDKXB0RAfwCKXGgazS4vBI5eBgYFh2bVTjEwwBkyQUgBLnljzAUoxQEQqwuYomMEwwIgr99aHJuC0BD3e0A1FBkzIhteHJsANRjakcfUCBmyJAaYeXxwyIlugICgCSdfv3zAwMDAwkMLH5wucZTmpfGwAAEF5p+QzHTatAAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAARCAYAAADHeGwwAAABTklEQVR42mNgIANEaZn9j9Iy+0+MHAs5hi/tq4dwihoxLEGWW3btFCMLA5ng06W7CMPQxPn0lBkI+gBXEMAAX4QThHHtIaq4njJDdFEjw7JrpxgZGBgYGHEZjM11cKAlj2EwOoBZwggzdNm1U4xRWmb/l+6Yh1BFwBA4cHdiEFdyZng5vRrDEpYoLbP/0xNiGBgWMCAMx2Pw7He8DKlCn1HExJWccapnmZ4Qw5C5YAkkSIh1MRqAu/zRa0wLGCgBl55CaD1pFOHO5SsQFmQuWEK+BWgGw0B5ZAQkDiZMY2CBRS4DNYCcKDxyGRgYGJZdO8XIBGPABCkFsOQJywfwOFh27RQjQ1Hjf7zpH4th6ABmMAww4sq90xNicBqMHG/oBuJMRfD8gGYAMhvZUjh7AcN/fJagJNPp27dhZcMSAi55onwAcQUkiDDZhOVxAQDOSqQ0zQSEnwAAAABJRU5ErkJggg=="],"cat":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAPCAYAAAALWoRrAAABHElEQVR42p2ToW7DMBCGf0+mmaKRqrQa8DN4ZGCgKi4dKYqiaaNho8FTZQUNDA1UY5P2BPcGk/IGVZnV0EkeyBw56SVp9qNf/1lfLnc2MEGpjt2U/Czg8W3lugAul+GXDFnRB8wTjejyEXkCANQAurkhK2SqY/d0e+XPuD4wAFTHlwbE5V4XADBXCnOlJo8kuv/E9bNF2HWqYyf/sxiv2eKGzeUQzP/mu8yAn/zk3OH7A9h+Aeslqt0GWUEwZIWsZ0guT/QfpPb7smS72Jdle1QPS77TU/B5qnabxvsum0Vx6lscl4fAFtSQFVlBk29AFwgAYmxJHCTU0L1uPTn/7EI/VBu9UtH6tTaFavmxWi/UkBW4U471AAZrgX4BBrmu6VdTx64AAAAASUVORK5CYII=","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAPCAYAAAALWoRrAAABIklEQVR42p2UoW7DMBCGf1emmaKRqXQa8DN4ZGCgGi4dKYqiaaNho8FTFQUNFBVUY5P2BPcGk/IG1ZjV0EkeSG05jj3VPXT36/Ld5e4SIMFKmesU/STgYfOgfUBI526lhhSLAetCIrt4Rl0AAFmArzekGC9lrl/uLk2OjoEBoD+8WVBINzYDgLkQmAuRPJLs8RM3rwpu16XMNT9nMcaurm+DOv8PZl5zyyvgt57k/Xx/AOsvYLlAv1uhagkNKcaHGZKuC3mEDP6+64Jd7LtuPKqnRbjTKfg063cr65su7aJCFltcSHeBI2hDilUtJV+ADwQAFtt2bAyhwj505n81BuY+XLVkY7eYyfdPb3RS2fJ9cFpxVjyBNqQY7sX4H5AaH+0Pv9+ci6Qo3cMAAAAASUVORK5CYII=","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAPCAYAAAALWoRrAAABGklEQVR42p2TsU7DMBRFj6vMVZi6s3TowBqFEalCYuhnVKQTSwY+AKTsMQMf0LGUkYXNyg8wsCB1ZAsdWB8LjpzUcQlXsvR8n339/K4NA5ClsQzh/yQoT5fSFejjydJYQqfZjfL63AjY0eUBoiyN5f7qxO4XbWrVW+6XBqDMEy9vMQIYz6aMZ9PhPVlsmNzsm2mZJ2RpLNF/jLGYnF54+SgkZq/5+H0L3B2s+/xYw8MLLOawXbIqKrSp1UibWq2KqlV+mSc4fW5h//beJq7n/kq1qRVFJWWeHJoQwnbZhLbKxigf+ozz8a5gS9RtwxB0BQHUMZN8Ii6C77r1c35/hxuHcsdFZSciO+nGoVzwnWpTK87PxBsDwZyDH7DR2SaSeiS9AAAAAElFTkSuQmCC"],"bear":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAASCAYAAACw50UTAAABAklEQVR42mNkIBFYKQn8h7GP3fvAiE+OhVSDEzwMEAI7LvyHWYBNjomBDOATF4ViIbKLkeUYCXkdGaC4jABYsOMCAws2Q0kxBB9gwRmeRILUqfsZxJWsGVo82TDkmEgy2KYJQ0hcyRq3y8l1MQzAXAyLSJegMgYGBgYGAQ6oy6kJ9qzrYtizrgsRLLQCLNQyaMuiZdgj9MGTV1R18YIdFyDZH5p9/zswMDAoyIhRbChymcOCxPnvAFVEjCUwg5ABekHGiC3L40uayIaiG4Y1QpHTOrJmZDayhXA2UqmIDcCLSwYmaML594cBmX3s3gdGQvK4DGeCe+/fH4RiZDYR8rgAADX5kJ7uv3e5AAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAASCAYAAACw50UTAAAA+klEQVR42mNkIBFYKQn8h7GP3fvAiE+OhVSDEzwMEAI7LvyHWYBNjomBDOATF4ViIbKLkeUYCXkdGaC4jABYsOMCAws2Q0kxBB9gwRmeRILUqfsZxJWsGVo82TDkmEgy2KYJQ0hcyRq3y8l1MQzAXAyLSJegMgYGBgYGAQ6oy6kJ9qzrYtizrgsRLLQCLNQyaMuiZdgj9MGTV1R18YIdFyDZH5p9/zswMDAoyIhRbChymcOCxPnvAFVEjCUwg5ABekHGiC3L40ua6IaiG4gzE8EMRTZgwY4LWF0JU4+rHIK73EpJ4D8DEzTh/PsDtZZ4Pj7XYy06SeVjAwCmCHfz7m6cegAAAABJRU5ErkJggg==","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAASCAYAAACw50UTAAABFklEQVR42mNkIBFYKQn8h7GP3fvAiE+OhVSDCwP1EALrL/2HWYBNjomBDBCSFo5iIbKLkeUYCXkdGaC4jADoX3+JgQWboaQYgg+w4AxPYoOoZyeDuJIzw9QgzOhjIsXg98YtGGLiSs64XU6ui2EA5mJYRBq6VDMwMDAwcLFCXU5WirG2YwixtsMQP7+nleH8nlbUMCcVrDl6iPgIpRSsmbUSe4TeffSagZqgf/0lSPaHZt//fgwMDMpyohQbilzmsCBx/vtBFRFjCcwgZIBekDFiy/L4kiayoeiGYY1Q5LSOrBmZjWwhnI1UKmID8OKSg42ZgYGBgeHHr78MyOxj9z4wEpLHZTgTzHs/fv2FK0ZmEyOPCwAA0HyhtfhSRIQAAAAASUVORK5CYII="],"pen":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAUCAYAAABSx2cSAAAA6klEQVR42mNkQANSCgb/GbCAZw8uMKKLsaBrlFLQYsAB/qMbwESkRgYpBS0MVzERoxGXASy4FJ7evxSFb+oYjaGGiRiN4krWKGIw21kIOVVcyRrOPpByAc5WqzH4T1Dzy3tHUfhqNWzwqGNED6y0tAycBs2aNYPh2YNr8DhH0aymY8Nw68oRrP5GDjSYAfAAU9OxwRlguMSZGCgA1NEM8yvZNsMMwJaaYOLIoc307MEFxmcPrhG0BV0jAwMDAyOxuQoWRch5mwUts/+/1fILIzVhE8PIz8iK4OGARQzD2diKoGcPLjBiE4OxAdm1dY/fQNJUAAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAUCAYAAABSx2cSAAAA6klEQVR42mNkQANSCgb/GbCAZw8uMKKLsaBrlFLQYsAB/qMbwESkRgYpBS0MVzERoxGXASy4FJ7evxSFb+oYjaGGiRiN4krWKGIw21kIOVVcyRrOPpByAc5WqzH4T1Dzy3tHUfhqNWzwqGNED6y0tAycBs2aNYPh2YNr8DhH0aymY8Nw68oRrP5GDjSYAfAAU9OxwRlguMSZGCgA1NEM8yvZNsMMwJaaYOLIoc307MEFxmcPrhG0BV0jAwMDAyOxuQoWRch5GyWFoSY/NhSNt1p+oSRNeDxLKRj8R5ZELz2wyWE4G1exg0sOAPyVd+y+3ELaAAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAUCAYAAABSx2cSAAAA70lEQVR42mNkQANSCgb/GbCAZw8uMKKLsaBrVFRTZ8AB/qMbwESkRgZFNXUMVzERoxGXASy4FB7ZuQCFb+OegKGGiRiN4krOKGIw21kIOVVcyRlhaM4lOFs6z+A/fs2HDzO8vLcXRUg6jx0edYzogRWfkI3TrIULpjLcv3UTHucoNmsZWDMsXDAVq78hmiEhDotzJmSNuAIMlzgTAwWAOpqvXThKmc0wA7ClJpg4cmgzPXtwgfH+rZsEbUHXyMDAwMBIbK5iYGBggFmCEc9Qgf9PJ/3ESE3YxDDyM7IiGMAmhuFsbEXQswcXGLGJwdgAL/5z9a8ExzMAAAAASUVORK5CYII="],"ggobi_walk":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAATCAYAAACdkl3yAAAA9klEQVR42u1TMRKCMBDcMP4BxoY/UMAjbCy0tyV/wEL+kLT2WljgH4SCF9jQOGH0D7FKJoQQKCzdGQYul1v2Njngj5+BFbn0xYtJPlUlVbEdA8BqKdkTbyRZikeVShWbCNQfpqSyIpdJljrJkyzVLQZqo7nowu1yBQBkm8MgHrQmRI8oCr2tbfc7TaLeo9aiKIQQvVeVKu45d5IR5cM6jrWqtm5GXrhU8CMFLTnRimjJyavrBoXmAwD1/extPbAXhOid33MYEZmmzx2Ak4iWnNje+GD6M7rZtOSEFZD5ienNJtq6gcrNzpQNc76mcvr4fVNtyvflvohqnnkZQ545AAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAATCAYAAACdkl3yAAAA/ElEQVR42u1TMRKCMBDcMP5BxoY/UIB/0MJCey2TP2Ahf0haey0s8A9i4QtsbJww+odYJRNICBaW7gwDl7nb7C4J8MfPwAuqQvXXJO+qUnq4WwPA6FuyO15I8wyXKlO6thHpHfqk8oKqNM+85GmeGYuRbrQXfTgdjgCAfLZu1S1rUjaI43HQ2mK1NCT67ViL4zGkbIKq9HAjhJeM6BwmSWJU3eqrk4VPhdgysFIQo4iVgjwfj9ag/QBAfd4HrUfdBSkb7/cQHCI79KEf4CVipSDdbEKw8/GebB2q2DJneDrfEF5QRXccdMcBQNlk5gR34buofT0kdKOd3QI9H1FCn0jPJDDaAAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAATCAYAAACdkl3yAAAA9klEQVR42u1TMRKCMBDcMP4BxoY/UMAjbCy0tyV/wEL+kLT2WljgH4SCF9jQOGH0D7FKJoQQKCzdGQYul1v2Njngj5+BFbn0xYtJPlUlVbEdA8BqKdkTbyRZikeVShWbCNQfpqSyIpdJljrJkyzVLQZqo7nowu1yBQBkm8MgHrQmRI8oCr2tbfc7TaLeo9aiKIQQvVeVKu45d5IR5cM6jrWqtm5GXrhU8CMFLTnRimjJyavrBoXmAwD1/extPbAXhOid33MYEZmmzx2Ak4iWnNje+GD6M7rZtOSEFZD5ienNJtq6gcrNzpQNc76mcvr4fVNtyvflvohqnnkZQ545AAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAATCAYAAACdkl3yAAAA6klEQVR42u1TMRKCMBDcMP4BxoY/UJBH2Fhob0v+gA1/IK29Fhb4B7HwBTY0TjL6h1gdE0IMFJbuDEP2hlt2Dw7442eoy8KE+GyRd9MYanY5ACzmij3wQsZzXJvcELcR0Ru+Wa3LwmQ894pnPO8jRvSgXfThfDwBAPhqN+CDaEppJEkcjLbebnoRuo+iJUkMpXTQFTVrKb1ijOawTNPe1b29jWbhcyH3AqKSrHckKsmeXTdotC8AaC+HYPTILSilvecpjITsoU99AK+QqCRzZxOCPZ/gShDoZ3Vrs3fLhst9YmzOtlMEX43wAbdxqdyM3eciAAAAAElFTkSuQmCC"],"ggobi_sit":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAATCAYAAACdkl3yAAAAz0lEQVR42u2TMRKCMBBFPxnuQM5BkRzCxkJ7W7gDjdyBlNhrYRHvABaewAOE0TvEajOoBMJI6Wsym2T/7O5PgD+LURWZHYuDRZ5aW0r+jAEgDhW744FUCjRaWIr7sJBqUikGz1IpXIsstKLz8QQAkKvdWzy7tfV240RondUaQcmdUl6x0fk0uraNru0QX67RRl6qyDfg9nIYrSLuJ1UFLLlBGNOB82SyekaXfYSIuNY4T2BMB997CYHlpYpu7dWJTbnWJ9tXbr7RL5+QzFmUFwuTdqB2hWwrAAAAAElFTkSuQmCC"],"ggobi_pet":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAATCAYAAACdkl3yAAABAElEQVR42q2TIRKCQBiF3zIcwRkpXoIA3Wo3EICKQU9A0RNIWCJoMJjXagaDJ/AAMHoDw5p2B1RgQb/C/MC+ff//doEBPPwlrz4BgAwVqTJKI6L1FRqlEWmr8aszZUc0DGoLj5Nn/91pGPAHY1yIvdcAoKuK3XCHaVvImMVF3as1GgbctK2v30zbki0rOzrs9gCA7fGM1XwKAHA8F71bczwX9syXYvkpxaDUhEgZx7VaOa2MJTxjCf/GR2rixWITk6YB56e01YVeXURDcJGGoChKGMa4070mfm5CRUS2ZhhjFEWJpvOigrbYxOSaX6RYV2pVgjWV8yVNl1IFEc5feQGgrokKQPxH5QAAAABJRU5ErkJggg=="],"ggobi_sleep":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAATCAYAAACdkl3yAAAA80lEQVR42u1Tuw3CMBQ8R1kBxaJJkwkogJoW6tRQ2g0ThILsYLdAwQYZwi48B0xhCrB5kEQidEic5OL97n0N/PF7YN8EqUp4Kstas/TbYLFXVPRpX4YusrfgF6SqEr7DwX9Spd7JmLSztcls2tI5Y6F3srfl9MHo30lmy3V0Ns0h2qieVpbQmXSRhGooyVXrVpJkyNpDUCbEizyY6Hw8YVsuAADbcoHz8fQ8SLp6OuTQhmkOsbU+OGPvWxvnOTjP4IyNhKFsZyxkrZmq4Pu2KWvNEgDgPMPlco1Z56sNc8ZG4oACIzhjo73AqH0L4Q35JlS+AVTWdFpJUAJcAAAAAElFTkSuQmCC"],"owl":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAPCAYAAADUFP50AAAA2UlEQVR42qWSoQ7CMBCGv5EpHmFBE1ISgi5mwWKmkBPIGXgVHIIgFhQKg10wTBMIE2AQBIVEUwQUxljJEn7Tu+/uvza5wr+SwlFSOKpovZQuem6TPLMUjvLc5gezs03PBpXDvo16oj9cAOADYb/ziJ8MgAdTcXK2StlJjWqLIuzjqeXtgc1+BUAgjwDcUsxoHI0HrziQ38xo7Pb8V3zRrPauzyYhuesAaJ92FGE2QJycLb2CKHWrVlSpM5uEzJdr3YuVXfSv36VNubpOhbpOhTLlRlP6NLG/dAfEQFd2T4hCmQAAAABJRU5ErkJggg==","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAPCAYAAADUFP50AAAA10lEQVR42rWSoQ7CMBCGv5EpHmFBE1ISgi6GYDFTyAkkBl4FhyATC2oKgyUY0AQCAgyCTCGnKWJ0jLGRJYRfXb+7/67NFX6VFJaSwlJF86Vk0m43yTJLYSm73XxjZrroWaAy2KdRd3TGCwAcwBt2o/jJAIiY2hwDo5Tu1Ki2KMLerlren9md1gAM5AWAe4LlGifTURwP5CfLNfb6ThzfNKu98r7rkbkOgM71QBFmAmyOgaFXsExM1VpW6viux3y11bUY6UV/+13alKlwJlQ4EyrvnPvGv+sBFm9MdBAe1zQAAAAASUVORK5CYII="],"beaver":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAMCAYAAACEJVa/AAAAqUlEQVR42mNgoAJgJEWxlYrAfxj72J0PcL0spBgQYKaAJPLgP8wgJlKd3nOci7B3kJ2MDFBdwcBQuvQ8g7WqIMOxOx8YWfA7GT/A8A66AXH6vxji9H9h1bzh1AMGRkZGRhTveBko/GdgYGD48OUDAyGXbDj1ACVmMAyBGWQgJ4DVgAuPPmAYAI/ibRceoEgYyEECd9o+iHiWE8QSbAbgTCcHbnzAy6cJAABaZEKHsgYyQwAAAABJRU5ErkJggg==","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAMCAYAAACEJVa/AAAAn0lEQVR42mNgoAJgJEWxlYrAfxj72J0PcL0spBgQYKaAJPLgP8wgJlKd3nOci7B3kJ2MDFBdwcBQuvQ8g7WqIMOxOx8YWfA7GT/A8A66AXH6vxji9H9h1bzh1AMGRkZGRhTveBko/GdgYGD48OUDAyGXbDj1ACVmMAyBGWQgJ4DVgAuPPmAYgBdkOSn8z3JCGI7ORwY408mBGx/w8qkOANdWP1giAqIgAAAAAElFTkSuQmCC"],"turtle":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAMCAYAAABvEu28AAAAyUlEQVR42sWSMQrCQBBF30ouYBsQra3SpDEgKRXBQ+wBxMbK2sYqJ8gZbOwlkBBIYxUsBSFg7QHWQldUHJNC8Jfzl8djZ+BHUVLRH7jmfVZmlfjekSDhzAdg6AUk+/TeFEaCtSTI0AsASPYpq20HgHDmP0z7A9c8WzuSibWwEJtbX5g4ngOgdWTKrFKtuk9cTk5iNx1vsED1yaZJFu0R5+4FrSPKrFIKID+sjdYRvbDXGHTcHV82qepWLuXbKWDt8sPaNJ2L6/97rg+YUU7tEwrpAAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAMCAYAAABvEu28AAAAzElEQVR42sWSMQrCQBBF30ouYBsQU6eysYkgKRXBQ+wBxMbK2iZVTuAZbOwlkBBIkyqkDAgBaw+wFhpRcTSF4Ot2//L4zCz8CCUFrmeb17siqcX3liTxF0MAxoMRUR7fksxIso4kGQ9GAER5zGbfA8BfDO9NXc82j60tqUnTopE0XPPMbLdLALQOTZHUqvNtiOvZUczm0x2NUL1r04ZVd8Kpf0brkCKplQJIy8BoHeL4TmtRdaieNqm+rVzi01e4k5aBScvASOdW6/87Fw+YUU5GwbJCAAAAAElFTkSuQmCC"],"eagle":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAOCAYAAADJ7fe0AAAAp0lEQVR42mNgoAJgJEaRlpTAfxj72rMPjCTboiUl8B8ZIBtIsgFiilb////////LZqv/XzZb/SfdkAu3UFzzZbMVYRdpSQn815IS+P9hofb/Dwu1CXqHEV1zhIspw4tH97EafuDWG6wBy4hsgIOaCAMDAwODgZYMAwMDA8OFa0+IMogJlwGkABZ0AWy2k+SdU9duYNVspqVBekJDTgskpwuYJnw0zQAAgCWRnQgT/nQAAAAASUVORK5CYII=","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAOCAYAAADJ7fe0AAAAsElEQVR42mNgoAJgJEaRlpTAfxj72rMPjCTboiUl8B8ZIBtIsgFiilb////////LZqv/XzZb/SfdkAu3UFzzZbMVYRdpSQn815IS+P9hofb/Dwu1CXqHEV1zhIspw4tH97EafuDWG6wBy4hsgIOaCAMDAwODgZYMAwMDA8OFa0+IMogJlwGkABZ0AWy2k+SdU9duYNVspqWBN6FhFURPBzy+x0hLpTADkBMVSYmLXAAAeTmKHhKppNwAAAAASUVORK5CYII="],"parrot":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAAvElEQVR42mNgoCV4Hpr6/3lo6n9kMSZiNP1++JTh98OnDMiamYjRZPL6A4Psya0Mvx8+ZfhyxOo/AwMDAyM+jY/MvFCcJ9T3gYGBgYGBx+YYIxM+27CJ89gcY2RgYGBgQZeI21X0n4GBgeF3zQ2cmjD8GLer6P/DLy8YHn55weBrOYkhtkIApzfgNtqvi/r/8MsLhg8Hm7AqlDu1DTM87NdF/dfPv/NfP//Of6pE/JcjVv9hwU+yRmSaKgAAPg1TOC51h90AAAAASUVORK5CYII=","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAYAAACZ3F9/AAAAuUlEQVR42mNgoCV4Hpr6/3lo6n9kMSZiNP1++JTh98OnDMiamYjRZPL6A4Psya0Mvx8+ZfhyxOo/AwMDAyM+jY/MvFCcJ9T3gYGBgYGBx+YYIxM+27CJ89gcY2RgYGBgQZeI21X0n4GBgeF3zQ2cmjD8GLer6P/DLy8YHn55weBrOYkhtkIApzfgNtqvi/r/8MsLhg8Hm7AqlDu1DTM87NdF/dfPv/NfP//Of6pEPCzoYTRJmnDxyQYAMklTOPJmY/0AAAAASUVORK5CYII="],"raccoon":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAOCAYAAADJ7fe0AAABA0lEQVR42r2SIW7DQBRE30ZWYCO1F7CiIAPLpAWLAnyKICsgoPcoCTMpCArKKYwXBCQrS4lUKVdotakCqoD+gsqu3caWSTpovmY1Ozt/4T8RBJEEQSS/OYDqapAkMwDubm94fXsHYLlcsN9b1TmFcydx7iTz+XPJizQ9AK1j0TqWNiOtxwz6BwAG/QNaj0utVxDfH9JmlE4fOZ5HpOkTx/OIJJmWmgdgTKYgFt8fArEYk6lqcQDbzw/ugd3u5c8Fqh7528jaNUWRTaiW6lUFYzLl3M8musJrE8MwrM15nl88p5pWGkUPjebWrmv/42KSwmC1WiiAyWQm1bnTc6zdtM5XwRd9Y2qJSRkkCwAAAABJRU5ErkJggg==","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAOCAYAAADJ7fe0AAABA0lEQVR42r2SsWrCUBSGvxuCo0J9gSBOGUKWdriTQx4kOHToe7i4ZemQySlPkfkODvUSUCj4Ci3X4lAceh0kaWJNyFD8p//w//zncM6Be8L3Q+v7ob3mAKJvQBw/AzB+GPLx+QXAapWy22nRewpjjtaYo10uXyteTuMASBlZKSPbFSTljNFgD8BosEfKWaU5JfG8CV1ByfyFw2lKkiw4nKbE8bzSXAClcgGR9bwJEFmlclFfHMDm55tHYLt9/9NANEe+BGm9plxkG+pLdeuCUrkw5vcSfeF2iUEQNOqiKG76RNtJw/CpNVzrdeM/nFumuiHLUpFlaaO+fjC3vdtbZ/3vOAMXDm658Y2zxAAAAABJRU5ErkJggg=="],"bee":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAMCAYAAAC9QufkAAAAuElEQVR42s2RIQ7CQBRE31ag1yFAEAxkCRfYnoBgCKpH3AQDgt6gvQBpU0QJAoOrxDSLIN3QNm0NgjEz+cn72fkLv1aYlzbMS9vMgzKZdQrz0mWT2dYC0bWgOQuWQmglbZwWzmuwVtIWL0lyVACsdqnLjCb4+wMAcVoIAO8bjIzurDPeJERGExmNVtI6WM1n/Qd5LHieJKzPtbEHkN7uoheeXj9+2eIHsXt2q/PQb1Rgp6oaTf8fvQHHX1+iBL9DtwAAAABJRU5ErkJggg==","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAMCAYAAAC9QufkAAAAuElEQVR42s2RIQ7CQBRE31ag1yFAEAxkCRfYnoBgCKpH3AQDgt6gvQBpU0QJAoOrxDSLIN3QNm0NgjEz+cn72fkLv1aYlzbMS9vMgzKZdQrz0mWT2dYC0bWgOQuWQmglbZwWzmuwVtIWL0lyVACsdqnLjCb4+wMAcVoIAO8bjIzurDPeJERGExmNVtI6WM1n/Qd5LHieJKzPtbEHkN7uoheeXj9+2eIHsXt2q/PQb1Rgr6oqTf8PvQG2W1+i2RREmgAAAABJRU5ErkJggg=="],"mole":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAOCAYAAADwikbvAAAAwElEQVR42mNgoBXYtuLgf3zyjNgEv50N/8/AwMDw7/tjBiZOWQYGBgYGLuOVjAQ1fzsb/v/f98cYBjJxymIYgMLRUjL5z8DAwBDgEYahecOOVQwMDAwM1+6dYcTQrKVk8h+bJmyGwAxgIlbjnO0bGGCugrmQEVmznp4eXPGlS5ewGtJqogZxclIAIxMum5ANwgVY4IGwg+E/siZcNmu3tMD9jBHaBhpmOG26cOMUSmijgP/zNvz/P2/Df2LFBw4AAEOSTLDufRIOAAAAAElFTkSuQmCC","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAOCAYAAADwikbvAAAAv0lEQVR42mNgoBXYtuLgf3zyjNgEv50N/8/AwMDw7/tjBiZOWQYGBgYGLuOVjAQ1fzsb/v/f98cYBjJxymIYgMLRUjL5z8DAwBDgEYahecOOVQwMDAwM1+6dYcTQrKVk8h+bJmyGwAxgIlbjnO0bGGCugrmQEVmznp4eXPGlS5ewGtJqogZxclIAIxMum5ANwgVY4IGwg+E/siZcNmu3tMD9jBHaBhpmOG26cOMUSmhjgP/zNvz/P2/Df1z8wQEAQ5JMsK6gB64AAAAASUVORK5CYII="],"duck":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAATCAYAAACUef2IAAABCklEQVR42mNgGGqAkRxNXqYC/5H5205/YKTYJV6mAv//P6r6///jVgj9qOo/ukUMDAwMTKQaunVtFgMDvzUDw8ejcPGta7MwfMFEsqEMDAhDZVsZxO0PYDWchZSwRAfiStZY9Ww7/YGREZ8hcBcSAB9XrELhC5TdgRiM4k0CYPYRD4ZUmx14DRcou8PIQtBl/Nao4YoDRK1+g8JnYWBgYPAOnoZpOL81fj4S8A6ehpGWmfC6EgtI9f5MVJBhNxiftwkECUpQbDv9gdE7eBpKBD48PhWnJnktA9LKClJSB77wxVoIwdLztGYrnIZl1R4jWAAx4st1y0JFUJISMp9QicZEyFAYQOcPGAAAysd16k6dL/sAAAAASUVORK5CYII=","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAATCAYAAACUef2IAAABCklEQVR42mNgGGqAkRxNXqYC/5H5205/YKTYJV6mAv//P6r6///jVgj9qOo/ukUMDAwMTKQaunVtFgMDvzUDw8ejcPGta7MwfMFEsqEMDAhDZVsZxO0PYDWchZSwRAfiStZY9Ww7/YGREZ8hcBcSAB9XrELhC5TdgRiM4k0CYPYRD4ZUmx14DRcou8PIQtBl/Nao4YoDRK1+g8JnYWBgYPAOnoZpOL81fj4S8A6ehpGWmfC6EgtI9f5MVJBhNxiftwkECUpQbDv9gdE7eBpKBD48PhWnJnktA9LKClJSB77wxVoIwdLztGYrnIZl1R4jWAAx4st1y0JFMJISshi+Uo2JkKHIAJsY3QEAsMN16tVKX/4AAAAASUVORK5CYII="],"frog":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAANCAYAAABPeYUaAAAAwklEQVR42mNgoAJgRBeQ95L6D2M/3PaMkZA4AzYDYEBM0eo/TCMucRhgRuYIqPI2nFU4x/D57HkGxlgGhkeHHzAIqPI2MDAwMKCLf7z9uRHDO/JeUv9tqxyIDofDbQfg3mJCl1xsvRSvZmzyjNhccfn0A5yG6JoqYLiGBV1RjY4bA4MOfq+0XNmFwmeCRdnhtgMYig9tU2I4tE2JYJgw4kojhADOtBJzJOp/zJGo/6TKwU3T77eCK7hYeAzDFkLyFAMAZDttX6cixAYAAAAASUVORK5CYII=","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAANCAYAAABPeYUaAAAAx0lEQVR42mNgoAJgRBeQ95L6D2M/3PaMkZA4AzYDYEBM0eo/TCMucRhgRuYIqPI2nFU4x/D57HkGxlgGhkeHHzAIqPI2MDAwMKCLf7z9uRHDO/JeUv9tqxyIDofDbQfg3mJCl1xsvRSvZmzyjNhccfn0A5yG6JoqYLiGBV1RjY4bA4MOfq+0XNmFwmeCRdnhtgMYig9tU2I4tE2JYJgw4kojhADWtBJzJOp/zJEovIbgUsPIwMDAoN9vBZe4WHgMZ2okVh1ZAABkO21f3k18FAAAAABJRU5ErkJggg=="],"otter":["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAASCAYAAABFGc6jAAABMElEQVR42mNgGG6AkRqGWCkI/EfmH3vwgdFKQeD/sQcf4OazUMOSACstNNFrULFrcMuYqBk8YWkJDAwMDAyYFhPwEXqQYAPIhsrbpzL0JC5gKLFkIM4imAXLFnTBxVbNWoDVIgGfDoYPWyoYGBgYGMSVrLE4AhJ8LLjCPCwtAafhuECJJQNDTk8fnG9i4sEgwAZhM+GKWFItwQbOnNmBGXTYUw/pYEpJEQMDAwPDhmPX4EkdJR9ZKQj8N1AQYWBgYGBQkBLDaxhy8BCyAMVHyJaQC3J6+hhcrDwwLEApGbIcVP5fePAGQ5JYy2F6cVkC99GFB29QFCH78MKDNwzIbHRHIMszMDD8x+sjbEn8wy9oPmFjYEBmw8oxfPLYzMRaBB178IFRgA2hEZlNjPzIAAD2yIs1CI8gQQAAAABJRU5ErkJggg==","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAASCAYAAABFGc6jAAABHElEQVR42mNgGG6AkRqGWCkI/EfmH3vwgdFKQeD/sQcf4OazUMOSACstNNFrULFrcMuYqBk8YWkJDAwMDAyYFhPwEXqQYAPIhsrbpzL0JC5gKLFkIM4imAXLFnTBxVbNWoDVIgGfDoYPWyoYGBgYGMSVrLE4AhJ8LLjCPCwtAafhuECJJQNDTk8fnG9i4sEgwAZhM+GKWFItwQbOnNmBGXTYUw/pYEpJEQMDAwPDhmPX4EkdJR9ZKQj8N1AQYWBgYGBQkBLDaxhy8BCyAMVHyJaQC3J6+hhcrDwwLEApGbIcVP5fePAGQ5JYy5H14rKIBaYQWQGyD2GGEMtnYGD4j80yRlz56MMvaD6BJk9S+Lh8hbNUQC4ZSOUPfwAAr4eCQa6NrWUAAAAASUVORK5CYII="]};
+// ---------- 말 ----------
+const T = {
+  ko: { work:'일하는 중', night:'야근 중', rest:'쉬는 시간', clock:(h,m)=>`포르투 ${h}:${m}`, note:'최근 것이 위',
+    bub:{ farm:['돼지 도트 찍는 중','밤샘 배포 완료!','알림 정리 중','잔디 심는 중','꿀꿀'], owl:['72층 검수 중','문제 하나 더','대련 액션 손보기','부엉','커피 한 잔'], eject:['필름 현상 중','저장 소리 낮추기','이어하기 고치는 중','심사 준비','찰칵'], lab:['씨앗 심는 중','이건 버리자','30초 테스트','아이디어 메모','딴짓 중'], ggobi:['냐','꼬비예요','일하는 척','낮잠…','그르릉','회장님 어디?'], duck:['꽥'] } },
+  en: { work:'at work', night:'working late', rest:'break time', clock:(h,m)=>`Porto ${h}:${m}`, note:'newest first',
+    bub:{ farm:['drawing pig dots','overnight build done!','sorting notifications','planting grass','oink'], owl:['checking floor 72','one more puzzle','polishing duels','hoot','coffee'], eject:['developing film','softer save sound','fixing resume','review prep','click'], lab:['planting a seed','drop this one','30-second test','idea note','side-questing'], ggobi:['meow','I am Ggobi','pretending to work','nap…','purr','where is the boss?'], duck:['quack'] } },
+  pt: { work:'a trabalhar', night:'serão', rest:'pausa', clock:(h,m)=>`Porto ${h}:${m}`, note:'o mais recente em cima',
+    bub:{ farm:['a desenhar o porco','build da noite feito!','a arrumar avisos','a plantar relva','oinc'], owl:['a rever o andar 72','mais um enigma','a afinar duelos','uu','café'], eject:['a revelar filme','som de guardar mais suave','a corrigir retomar','a preparar revisão','clique'], lab:['a plantar uma semente','este vai fora','teste de 30 s','nota de ideia','a fazer outra coisa'], ggobi:['miau','sou o Ggobi','a fingir que trabalho','sesta…','ronrom','onde está o chefe?'], duck:['quá'] } }
+};
+// 작업 일지 (최근이 위). 날짜는 포르투 기준.
+const LOG = [
+  { d:'11-01', k:'eject', ko:'EJECT 출시 후보 빌드 59. 저장 소리·이어하기 손보는 중.', en:'EJECT release candidate build 59. Tuning the save sound and resume.', pt:'EJECT build candidato 59. A afinar o som de guardar e o retomar.' },
+  { d:'11-01', k:'owl', ko:'부엉 무림탑 v21. 72층 전부 자동 완주 검수, 대련 액션 개편.', en:'Owl Tower v21. All 72 floors auto-cleared in QA, duel actions reworked.', pt:'Owl Tower v21. Os 72 andares passaram no QA automático, duelos renovados.' },
+  { d:'11-01', k:'farm', ko:'동물농장 v128~v132 밤샘 배포. 축하·알림을 한 번에 하나씩으로.', en:'Gumdang Farm v128–v132 shipped overnight. One celebration at a time now.', pt:'Gumdang Farm v128–v132 lançados de noite. Agora uma celebração de cada vez.' },
+  { d:'10-30', k:'company', ko:'회사 메일 hello@ 열림. 사이트 한국어·포르투갈어 페이지.', en:'hello@ mailbox opened. Site pages in Korean and Portuguese.', pt:'Caixa hello@ aberta. Páginas do site em coreano e português.' },
+  { d:'10-27', k:'eject', ko:'EJECT 소개·지원·개인정보 페이지 공개.', en:'EJECT about, support and privacy pages published.', pt:'Páginas sobre, suporte e privacidade do EJECT publicadas.' },
+];
+const NAMES = { farm:'Gumdang Farm', owl:'Owl Tower', eject:'EJECT', lab:{ko:'딴짓연구소',en:'Lab',pt:'Laboratório'}, company:'GRGS' };
+
+// ---------- 언어 ----------
+const root = document.documentElement;
+function pickLang(){ try{ const s=localStorage.getItem('grgs.lang'); if(s) return s; }catch(e){} const n=(navigator.language||'en').toLowerCase(); return n.startsWith('ko')?'ko':n.startsWith('pt')?'pt':'en'; }
+let LANG = pickLang();
+function setLang(l){ LANG=l; root.setAttribute('data-lang',l); root.lang = l==='pt'?'pt-PT':l; document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.lang===l))); try{ localStorage.setItem('grgs.lang',l);}catch(e){} renderLog(); tick(); }
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+function renderLog(){ const el=document.getElementById('log'); el.innerHTML=''; LOG.forEach(r=>{ const d=document.createElement('div'); const nm=typeof NAMES[r.k]==='string'?NAMES[r.k]:NAMES[r.k][LANG]; d.innerHTML=`<time>${r.d}</time><span><b>${nm}</b> · ${r[LANG]}</span>`; el.appendChild(d); }); document.getElementById('logNote').textContent=T[LANG].note; }
+document.querySelectorAll('[data-spr]').forEach(im=>{ const a=SPR[im.dataset.spr]; if(a){ im.src=a[0]; im.onload=()=>{ im.style.width=(im.naturalWidth*2)+'px'; im.style.height=(im.naturalHeight*2)+'px'; }; } });
+
+// ---------- 시간 (포르투) ----------
+function portoNow(){ try{ const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Lisbon',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()); const h=+p.find(x=>x.type==='hour').value, m=p.find(x=>x.type==='minute').value; return {h:h%24,m}; }catch(e){ const d=new Date(); return {h:d.getHours(),m:String(d.getMinutes()).padStart(2,'0')}; } }
+let NIGHT=false, LASTH=-1;
+function tick(){ const {h,m}=portoNow(); const night = h>=19 || h<7; const rest = (h>=12 && h<13) || h>=23 || h<6; document.getElementById('clock').textContent=T[LANG].clock(String(h).padStart(2,'0'),m); const pill=document.getElementById('pill'); pill.classList.toggle('off',rest); document.getElementById('pillTxt').textContent = rest?T[LANG].rest:(night?T[LANG].night:T[LANG].work); if(night!==NIGHT||h!==LASTH){ NIGHT=night; LASTH=h; paint(); } }
+
+// ---------- 사옥 그림 (160 x 118 칸) ----------
+const W=160, FLOORS=4, FH=20, ROOF=30, GROUND=ROOF+FLOORS*FH, H=GROUND+16; // 층: 위부터 4F..1F
+const FLOOR_KEYS=['lab','eject','owl','farm'];
+const FLOOR_NAMES={ lab:{ko:'4F 딴짓연구소',en:'4F Lab',pt:'4.º Laboratório'}, eject:{ko:'3F EJECT 필름',en:'3F EJECT film',pt:'3.º EJECT filme'}, owl:{ko:'2F 부엉 무림탑',en:'2F Owl Tower',pt:'2.º Owl Tower'}, farm:{ko:'1F 동물농장',en:'1F Gumdang Farm',pt:'1.º Gumdang Farm'} };
+const BX=14, BW=108; // 건물 가로
+function floorTop(i){ return ROOF + i*FH; } // i=0 → 4F
+const cv=document.getElementById('bg'), c=cv.getContext('2d');
+function px(x,y,w,h,col){ c.fillStyle=col; c.fillRect(x,y,w,h); }
+let seed=7; function rnd(){ seed=(seed*16807)%2147483647; return (seed-1)/2147483646; }
+function paint(){
+  seed=7; const n=NIGHT;
+  // 하늘
+  const sky = n?['#141d44','#1a2552','#213060']:['#8fd0f5','#a8dcf7','#c6e9fb'];
+  for(let y=0;y<GROUND;y++) px(0,y,W,1, sky[Math.min(2,Math.floor(y/ (GROUND/3)))]);
+  if(n){ for(let i=0;i<40;i++) px(Math.floor(rnd()*W),Math.floor(rnd()*(ROOF+30)),1,1,rnd()<.3?'#fff6dc':'#9cb4ff'); px(136,8,6,6,'#fff3b0'); px(135,9,1,4,'#fff3b0'); px(142,9,1,4,'#fff3b0'); px(139,7,2,1,'#141d44'); }
+  else { px(134,7,8,8,'#ffd24a'); px(133,9,1,4,'#ffd24a'); px(142,9,1,4,'#ffd24a'); px(136,6,4,1,'#ffd24a'); px(136,15,4,1,'#ffd24a'); }
+  // 구름
+  const cl = n?'#2a3566':'#ffffff'; [[8,12,14],[150-20,20,10],[60,6,9]].forEach(([x,y,w])=>{ px(x,y+2,w,3,cl); px(x+2,y,w-5,2,cl); px(x+w-4,y+1,3,1,cl); });
+  // 땅
+  px(0,GROUND,W,H-GROUND, n?'#2d4a2a':'#79b85a'); px(0,GROUND,W,1,n?'#3a5c36':'#8ccb6a'); px(0,GROUND+6,W,H-GROUND-6, n?'#243d22':'#6aa94f');
+  for(let i=0;i<30;i++){ const x=Math.floor(rnd()*W); px(x,GROUND+1+Math.floor(rnd()*3),1,2,n?'#3a5c36':'#8ccb6a'); }
+  // 길
+  px(BX+BW/2-9,GROUND,18,H-GROUND,n?'#6c6253':'#d9c8a6'); px(BX+BW/2-9,GROUND,18,1,n?'#7c7262':'#e8dcc2');
+  // 나무 2그루
+  [[3,GROUND-20]].forEach(([x,y])=>{ px(x+3,y+12,3,10,'#5b3a20'); const g=n?'#2f5a30':'#3f9a46', g2=n?'#3c6e3c':'#55b45a'; px(x,y+4,9,9,g); px(x+1,y+1,7,4,g); px(x+2,y,5,2,g); px(x+2,y+3,3,2,g2); px(x+5,y+7,2,2,g2); });
+  // 건물 본체
+  px(BX-2,ROOF-2,BW+4,GROUND-ROOF+2,'#2a1d14');
+  px(BX,ROOF,BW,GROUND-ROOF, n?'#4a4f5c':'#6f7483');
+  // 지붕 간판 GRGS
+  px(BX-2,ROOF-14,BW+4,14,'#2a1d14'); px(BX,ROOF-12,BW,10,'#ffd24a');
+  px(BX+BW/2-2,ROOF-19,4,5,'#2a1d14'); px(BX+BW/2,ROOF-18,1,1,'#ff5a4a');
+  const LET={G:['01110','10001','10000','10111','10001','10001','01110'],R:['11110','10001','10001','11110','10100','10010','10001'],S:['01111','10000','10000','01110','00001','00001','11110']};
+  let lx=BX+BW/2-15; for(const ch of 'GRGS'){ LET[ch].forEach((row,j)=>{ [...row].forEach((b,i)=>{ if(b==='1') px(lx+i,ROOF-10+j,1,1,'#2a1d14'); }); }); lx+=8; }
+  // 층
+  for(let i=0;i<FLOORS;i++){
+    const y=floorTop(i);
+    px(BX,y,BW,1,'#2a1d14'); // 바닥선
+    px(BX,y+1,BW,FH-1, n?'#3d4250':'#5c6170'); // 벽
+    px(BX,y+FH-3,BW,3,'#2a1d14'); // 각 층 바닥 두께
+    // 창문 (뒤 배경: 캐릭터는 창 앞을 걸어요)
+    const lit = n ? '#ffe08a' : '#fff2c8';
+    for(let k=0;k<5;k++){ const wx=BX+8+k*20; px(wx-1,y+2,10,10,'#2a1d14'); px(wx,y+3,8,8, (n && rnd()<.15)?'#3d4250':lit); px(wx+3,y+3,1,8,'#2a1d14'); px(wx,y+6,8,1,'#2a1d14'); }
+    // 왼쪽 층 번호판
+    
+  }
+  // 1층 문
+  const dy=floorTop(FLOORS-1); px(BX+BW/2-6,dy+3,12,FH-6,'#2a1d14'); px(BX+BW/2-5,dy+4,10,FH-7,n?'#1a2232':'#1f2a44'); px(BX+BW/2-5,dy+4,10,2,'#c0392b'); px(BX+BW/2-5,dy+6,10,1,'#fff6dc'); px(BX+BW/2+2,dy+10,1,1,'#ffd24a');
+  // 우편함 · 화분
+  px(BX+BW+8,GROUND-7,4,5,'#c0392b'); px(BX+BW+9,GROUND-2,2,3,'#2a1d14'); px(BX+BW+16,GROUND-5,14,2,'#8a5a34'); px(BX+BW+17,GROUND-3,1,3,'#5b3a20'); px(BX+BW+28,GROUND-3,1,3,'#5b3a20'); px(BX+BW+16,GROUND-8,14,1,'#8a5a34'); px(BX-10,GROUND-4,5,4,'#8a5a34'); px(BX-9,GROUND-7,3,3,'#3f9a46'); px(BX-8,GROUND-8,1,1,'#ff9a8a');
+  // 층 이름표 위치 (HTML)
+  const st=document.getElementById('stage'); st.querySelectorAll('.lbl').forEach(e=>e.remove());
+  FLOOR_KEYS.forEach((k,i)=>{ const e=document.createElement('div'); e.className='lbl'; e.textContent=FLOOR_NAMES[k][LANG]; e.style.top=((floorTop(i)+FH/2-1)/H*100)+'%'; st.appendChild(e); });
+}
+
+// ---------- 캐릭터 ----------
+const stage=document.getElementById('stage'); const office=document.getElementById('office');
+let U=1; function unit(){ U=office.clientWidth/W; }
+const ACTORS=[];
+function actor(o){
+  const el=document.createElement('div'); el.className='sp'; const im=document.createElement('img'); im.alt=''; el.appendChild(im); const b=document.createElement('div'); b.className='bub'; el.appendChild(b); stage.appendChild(el);
+  if(o.low) el.classList.add('low'); const a=Object.assign({ el, im, b, frames:SPR[o.spr], f:0, dir:1, x:o.x, speed:o.speed||3, minX:o.minX, maxX:o.maxX, wait:0, say:0, state:'walk', ft:0 }, o);
+  const tmp=new Image(); tmp.src=a.frames[0]; tmp.onload=()=>{ a.w=tmp.naturalWidth; a.h=tmp.naturalHeight; a.ready=true; place(a); }; ACTORS.push(a); return a;
+}
+function place(a){ if(!a.ready) return; const x=a.x*U, y=a.baseY*U; a.el.style.width=(a.w*U)+'px'; a.el.style.height=(a.h*U)+'px'; a.el.style.transform=`translate(${x}px,${(y - a.h*U)}px)`; a.el.classList.toggle('flip', a.dir<0 !== !!a.flipDefault); }
+function pickBub(a){ const arr=T[LANG].bub[a.key]||[]; return arr[Math.floor(Math.random()*arr.length)]||''; }
+function step(dt){
+  for(const a of ACTORS){ if(!a.ready) continue;
+    if(a.state==='walk'){ a.x+=a.dir*a.speed*dt; if(a.x>a.maxX-a.w){ a.x=a.maxX-a.w; a.dir=-1; } if(a.x<a.minX){ a.x=a.minX; a.dir=1; } a.ft+=dt; if(a.ft>0.18){ a.ft=0; a.f=(a.f+1)%a.frames.length; a.im.src=a.frames[a.f]; } if(Math.random()<dt*0.25){ a.state='stand'; a.wait=1.2+Math.random()*3; a.im.src=(a.standFrames||a.frames)[0]; } }
+    else { a.wait-=dt; if(a.wait<=0){ a.state='walk'; if(Math.random()<.5) a.dir*=-1; } }
+    a.say-=dt; if(a.say<=0){ if(a.b.classList.contains('on')){ a.b.classList.remove('on'); a.say=3+Math.random()*9; } else if(Math.random()<.6){ a.b.textContent=pickBub(a); a.b.classList.add('on'); a.say=2.2+Math.random()*1.5; } else a.say=2; }
+    place(a);
+  }
+}
+// 꼬비: 땅에서 걷기·앉기·잠
+function ggobi(){
+  const g=actor({ key:'ggobi', spr:'ggobi_walk', x:60, minX:4, maxX:W-6, speed:4, baseY:GROUND+6, flipDefault:false, standFrames:SPR.ggobi_sit });
+  g.flipDefault=true; // 원본은 왼쪽을 봄
+  const orig=step; let napT=0;
+  g.special=(dt)=>{ if(g.state==='nap'){ napT-=dt; if(napT<=0){ g.state='walk'; } return; } if(g.state==='stand' && Math.random()<dt*0.08){ g.state='nap'; napT=4+Math.random()*4; g.im.src=SPR.ggobi_sleep[0]; g.b.textContent=T[LANG].bub.ggobi[3]; g.b.classList.add('on'); g.say=3; } };
+  return g;
+}
+const G=ggobi();
+// 층마다 동물
+const FLOOR_CAST={ lab:['mole','frog','bee'], eject:['cat','parrot','turtle'], owl:['owl','eagle','raccoon'], farm:['pig','bear','pen'] };
+FLOOR_KEYS.forEach((k,i)=>{ const y=floorTop(i)+FH-3; FLOOR_CAST[k].forEach((s,j)=>{ actor({ key:k, spr:s, x:BX+6+j*32+Math.random()*8, minX:BX+3, maxX:BX+BW-3, speed:2+Math.random()*2, baseY:y, low:i===0, flipDefault:(s==='pig'||s==='cat'||s==='bear'||s==='pen')?false:false }); }); });
+actor({ key:'duck', spr:'duck', x:100, minX:4, maxX:W-6, speed:2.5, baseY:GROUND+9 });
+// 창문 누르면 그 층 카드로
+office.addEventListener('click',(e)=>{ const r=office.getBoundingClientRect(); const y=(e.clientY-r.top)/r.height*H; const i=Math.floor((y-ROOF)/FH); if(i>=0&&i<FLOORS){ const id={lab:'c-lab',eject:'c-eject',owl:'c-owl',farm:'c-farm'}[FLOOR_KEYS[i]]; const el=document.getElementById(id); el.scrollIntoView({behavior:'smooth',block:'center'}); el.animate([{boxShadow:'0 0 0 0 var(--gold)'},{boxShadow:'0 0 0 6px var(--gold)'},{boxShadow:'0 0 0 0 transparent'}],{duration:900}); } else if(y>=GROUND){ G.b.textContent=T[LANG].bub.ggobi[1]; G.b.classList.add('on'); G.say=2.5; G.state='stand'; G.wait=2; G.im.src=SPR.ggobi_pet[0]; } });
+let last=performance.now(); const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function loop(t){ const dt=Math.min(0.05,(t-last)/1000); last=t; if(!reduce||true){ G.special(dt); step(dt); } requestAnimationFrame(loop); }
+new ResizeObserver(()=>{ unit(); ACTORS.forEach(place); }).observe(office);
+setLang(LANG); unit(); paint(); requestAnimationFrame(loop); setInterval(tick,30000);
+</script>
+</body>
+</html>
