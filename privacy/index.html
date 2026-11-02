@@ -1,9 +1,88 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Privacy · Gatinho Reguila</title><link rel="icon" href="../icon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap"><style>:root{--bg:#faf8f5;--fg:#1d1b19;--mute:#6b655e;--line:#e4dfd8}@media (prefers-color-scheme:dark){:root{--bg:#141312;--fg:#efebe6;--mute:#a39c94;--line:#2c2a27}}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo","Noto Sans KR",Arial,sans-serif}main{max-width:640px;margin:0 auto;padding:40px 20px 80px}h1{font-family:"Lora",Georgia,serif;font-size:28px;font-weight:600;margin:0 0 4px}h2{font-family:"Lora",Georgia,serif;font-size:18px;font-weight:600;margin:32px 0 8px}.sub{color:var(--mute);margin:0 0 24px}a{color:inherit}footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}.back{color:var(--mute);text-decoration:none}.back:hover{color:var(--fg)}</style></head><body><main>
-<p><a class="back" href="../">← Gatinho Reguila</a></p>
-<h1>Privacy</h1><p class="sub">Gatinho Reguila, Unipessoal Lda · Porto, Portugal</p>
-<p>Our apps and games do not require an account, show no ads, and do not track you. Your photos and game progress stay on your device unless an app's own privacy page says otherwise.</p>
-<h2>Per app</h2><ul><li><a href="../eject/privacy/">EJECT (iPhone)</a> — no data collection.</li><li>Gumdang Farm, Owl Tower — in private testing; progress is saved in your browser only.</li></ul>
-<h2>Crash reports</h2><p>If you opted in to share analytics with Apple, Apple may send us anonymous crash reports. They contain no personal data.</p>
-<h2>한국어</h2><p>우리 앱과 게임은 계정이 필요 없고, 광고가 없고, 사용자를 추적하지 않아요. 사진과 게임 기록은 기기 안에만 있어요. 앱별 안내: <a href="../eject/privacy/">EJECT 개인정보</a>.</p>
-<h2>Português</h2><p>As nossas apps e jogos não precisam de conta, não têm anúncios e não rastreiam o utilizador. As fotos e o progresso ficam só no seu aparelho. Por app: <a href="../eject/privacy/">EJECT privacidade</a>.</p>
-<footer>Questions: <a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a> · Updated 2026-11-02</footer></main></body></html>
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#faf8f5">
+<link rel="icon" type="image/png" href="../icon.png">
+<title>Privacy · Gatinho Reguila</title>
+<meta name="description" content="Privacy at Gatinho Reguila: no accounts, no ads, no tracking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap">
+<script>try{var l=localStorage.getItem("grgs.lang");if(l==="ko"||l==="pt")document.documentElement.setAttribute("data-lang",l)}catch(e){}</script>
+<style>
+:root{--paper:#faf8f5;--ink:#1d1b19;--soft:#6b655e;--line:#e4dfd8;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--paper:#141312;--ink:#efebe6;--soft:#a39c94;--line:#2c2a27}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:3px}
+.bar{position:sticky;top:0;z-index:2;background:var(--paper);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:680px;margin:0 auto;padding:10px max(16px,env(safe-area-inset-right)) 10px max(16px,env(safe-area-inset-left));display:flex;align-items:center;justify-content:space-between;gap:10px}
+.crumb{display:flex;align-items:center;gap:8px;min-width:0;font-size:14px;white-space:nowrap}.crumb .home{color:var(--soft);text-decoration:none}.crumb .home:hover{color:var(--ink)}.crumb .sep{color:var(--line)}.mark{font-weight:600;letter-spacing:.18em;text-decoration:none}
+.lang{display:inline-flex;gap:12px;margin-left:auto;font-size:14px}.lang button{appearance:none;background:none;border:0;padding:0;font:inherit;color:var(--soft);cursor:pointer;border-bottom:1px solid transparent;line-height:1.4}.lang button[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}.lang button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+main>section[lang]{display:none;border-bottom:0}html[data-lang="en"] main>section[lang="en"],html[data-lang="ko"] main>section[lang="ko"],html[data-lang="pt"] main>section[lang="pt-PT"]{display:block}
+.en,.ko,.pt{display:none}html[data-lang="en"] .en,html[data-lang="ko"] .ko,html[data-lang="pt"] .pt{display:inline}
+.wrap{max-width:680px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left))}
+section{padding:36px 0 44px;border-bottom:1px solid var(--line);scroll-margin-top:58px}
+h1{font-family:"Lora",Georgia,"Times New Roman",serif;font-size:30px;line-height:1.2;font-weight:600;letter-spacing:0;margin:0 0 6px}
+h2{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:34px 0 8px}
+h3{font-size:17px;font-weight:600;margin:28px 0 6px}
+p,ul{margin:0 0 14px}
+ul{padding-left:1.2em}
+li{margin:3px 0}
+.tag{font-size:20px;margin:0 0 18px}
+.lead{font-size:18px}
+.short{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:18px 0 6px;background:transparent}
+.meta,.date,.links{font-size:14px;color:var(--soft)}
+.links a{color:var(--soft)}
+.hero{text-align:center;padding:40px 0 4px}
+.hero svg{display:block;margin:0 auto 14px;width:220px;max-width:70%;height:auto}
+.hero .name{font-family:"Lora",Georgia,serif;font-size:34px;font-weight:600;letter-spacing:.3em;margin:0;padding-left:.32em}
+[lang=ko]{word-break:keep-all;overflow-wrap:break-word}
+[lang=ko] h2{letter-spacing:.04em}
+.foot{padding-top:24px;padding-bottom:calc(40px + env(safe-area-inset-bottom));font-size:13px;color:var(--soft)}
+.foot p{margin:0 0 6px}
+.foot a{color:var(--soft)}
+</style>
+</head>
+<body>
+<header class="bar"><div class="bar-in"><div class="crumb"><a class="home" href="../">Gatinho Reguila</a><span class="sep" aria-hidden="true">/</span><span class="mark">Privacy</span></div><nav class="lang" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ko" aria-pressed="false">한국어</button><button type="button" data-lang="pt" aria-pressed="false">PT</button></nav></div></header>
+<main class="wrap">
+<section id="en" lang="en"><h1>Privacy</h1>
+<p class="tag">What stays on your device stays there.</p>
+<p class="lead">Our apps and games do not require an account, show no ads, and do not track you. Your photos and game progress stay on your device unless an app's own privacy page says otherwise.</p>
+<h2>Per app</h2>
+<ul><li><a href="../eject/privacy/">EJECT</a> — no data collection.</li><li>Gumdang Farm, Owl Tower — in private testing; progress is saved in your browser only.</li></ul>
+<h2>Crash reports</h2>
+<p>If you opted in to share analytics with Apple, Apple may send us anonymous crash reports. They contain no personal data.</p>
+<p class="date">Updated 2026-11-02 · Gatinho Reguila, Unipessoal Lda · Porto, Portugal</p>
+</section>
+<section id="ko" lang="ko"><h1>개인정보</h1>
+<p class="tag">기기 안에 있는 것은 기기 안에 있어요.</p>
+<p class="lead">우리 앱과 게임은 계정이 필요 없고, 광고가 없고, 사용자를 추적하지 않아요. 사진과 게임 기록은 기기 안에만 있어요. 앱마다 다른 점은 그 앱의 개인정보 페이지에 적어 둡니다.</p>
+<h2>앱별</h2>
+<ul><li><a href="../eject/privacy/">EJECT</a> — 수집하는 정보 없음.</li><li>금당 농장, 부엉이 탑 — 비공개 테스트 중. 기록은 브라우저 안에만 저장돼요.</li></ul>
+<h2>오류 보고</h2>
+<p>Apple에 분석 정보 공유를 허용했다면, Apple이 익명의 오류 보고를 저희에게 보낼 수 있어요. 개인정보는 들어 있지 않습니다.</p>
+<p class="date">2026-11-02 갱신 · Gatinho Reguila, Unipessoal Lda · 포르투, 포르투갈</p>
+</section>
+<section id="pt" lang="pt-PT"><h1>Privacidade</h1>
+<p class="tag">O que fica no seu aparelho fica lá.</p>
+<p class="lead">As nossas apps e jogos não precisam de conta, não têm anúncios e não rastreiam o utilizador. As fotos e o progresso ficam só no seu aparelho, salvo indicação na página de privacidade da própria app.</p>
+<h2>Por app</h2>
+<ul><li><a href="../eject/privacy/">EJECT</a> — sem recolha de dados.</li><li>Gumdang Farm, Owl Tower — em teste privado; o progresso fica só no seu browser.</li></ul>
+<h2>Relatórios de erros</h2>
+<p>Se aceitou partilhar análises com a Apple, a Apple pode enviar-nos relatórios de erros anónimos. Não contêm dados pessoais.</p>
+<p class="date">Atualizado 2026-11-02 · Gatinho Reguila, Unipessoal Lda · Porto, Portugal</p>
+</section>
+</main>
+<footer class="wrap foot">
+<p><a href="../privacy/"><span class="en">Privacy</span><span class="ko">개인정보</span><span class="pt">Privacidade</span></a> · <a href="../support/"><span class="en">Support</span><span class="ko">지원</span><span class="pt">Suporte</span></a> · <a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a></p>
+<p>© 2026 <a href="../">Gatinho Reguila</a>, Unipessoal Lda · Porto, Portugal</p>
+</footer>
+<script>(function(){var r=document.documentElement,K="grgs.lang";function set(l){r.setAttribute("data-lang",l);r.lang=l==="pt"?"pt-PT":l;document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.lang===l))});try{localStorage.setItem(K,l)}catch(e){}}var s=r.getAttribute("data-lang")||"en";set(s);document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.lang)})})})();</script>
+</body>
+</html>
