@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap">
+<script>try{var l=localStorage.getItem("grgs.lang");if(l==="ko"||l==="pt")document.documentElement.setAttribute("data-lang",l)}catch(e){}</script>
 <style>
 :root{--bg:#faf8f5;--fg:#1d1b19;--mute:#6b655e;--line:#e4dfd8;--soft:#f1ece4;color-scheme:light dark}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141312;--fg:#efebe6;--mute:#a39c94;--line:#2c2a27;--soft:#1d1b19}}
@@ -23,7 +24,8 @@
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo","Noto Sans KR",Arial,sans-serif;-webkit-font-smoothing:antialiased}
-main{max-width:640px;margin:0 auto;padding:64px 20px 80px}
+main{max-width:640px;margin:0 auto;padding:22px 20px 80px}
+.top{display:flex;justify-content:flex-end;margin-bottom:34px}
 a{color:inherit}
 h1{font-family:"Lora",Georgia,"Times New Roman",serif;font-size:36px;letter-spacing:-.005em;margin:0;font-weight:600;line-height:1.1}
 h2{font-family:"Lora",Georgia,serif;font-size:19px;margin:44px 0 8px;font-weight:600}
@@ -48,7 +50,7 @@ p{margin:0}
 footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:grid;gap:4px}
 footer .r{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}
 footer a{text-decoration:none;border-bottom:1px solid var(--line)}
-.lang{display:inline-flex;gap:10px;margin-left:auto}
+.lang{display:inline-flex;gap:12px;margin-left:auto;font-size:14px}
 .lang button{appearance:none;background:none;border:0;padding:0;font:inherit;color:var(--mute);cursor:pointer;border-bottom:1px solid transparent}
 .lang button[aria-pressed="true"]{color:var(--fg);border-color:var(--fg)}
 .lang button:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
@@ -69,6 +71,7 @@ span.ko,span.pt{display:none} html[data-lang="ko"] span.ko,html[data-lang="pt"] 
 </style>
 </head>
 <body><main>
+<div class="top"><nav class="lang" aria-label="language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ko" aria-pressed="false">한국어</button><button type="button" data-lang="pt" aria-pressed="false">PT</button></nav></div>
 <header class="head">
   <div class="t">
     <h1>Gatinho Reguila</h1>
@@ -109,8 +112,7 @@ span.ko,span.pt{display:none} html[data-lang="ko"] span.ko,html[data-lang="pt"] 
 
 <footer>
   <div class="r">Gatinho Reguila, Unipessoal Lda · Porto, Portugal</div>
-  <div class="r"><a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a><a href="privacy/"><span class="en">Privacy</span><span class="ko">개인정보</span><span class="pt">Privacidade</span></a><a href="support/"><span class="en">Support</span><span class="ko">지원</span><span class="pt">Suporte</span></a>
-    <nav class="lang" aria-label="language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ko" aria-pressed="false">한국어</button><button type="button" data-lang="pt" aria-pressed="false">PT</button></nav></div>
+  <div class="r"><a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a><a href="privacy/"><span class="en">Privacy</span><span class="ko">개인정보</span><span class="pt">Privacidade</span></a><a href="support/"><span class="en">Support</span><span class="ko">지원</span><span class="pt">Suporte</span></a></div>
 </footer>
 </main>
 <script>

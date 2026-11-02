@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap">
+<script>try{var l=localStorage.getItem("grgs.lang");if(l==="ko"||l==="pt")document.documentElement.setAttribute("data-lang",l)}catch(e){}</script>
 <style>
 :root{--paper:#faf8f5;--ink:#1d1b19;--soft:#6b655e;--line:#e4dfd8;color-scheme:light dark}
 @media (prefers-color-scheme:dark){:root{--paper:#141312;--ink:#efebe6;--soft:#a39c94;--line:#2c2a27}}
@@ -21,9 +22,9 @@ a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:3px}
 .bar{position:sticky;top:0;z-index:2;background:var(--paper);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .bar-in{max-width:680px;margin:0 auto;padding:10px max(16px,env(safe-area-inset-right)) 10px max(16px,env(safe-area-inset-left));display:flex;align-items:center;justify-content:space-between;gap:10px}
 .crumb{display:flex;align-items:center;gap:8px;min-width:0;font-size:14px;white-space:nowrap}.crumb .home{color:var(--soft);text-decoration:none}.crumb .home:hover{color:var(--ink)}.crumb .sep{color:var(--line)}.mark{font-weight:600;letter-spacing:.18em;text-decoration:none}
-.lang{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
-.lang a{font-size:13px;line-height:1.3;text-decoration:none;padding:5px 10px;border:1px solid var(--line);border-radius:999px;white-space:nowrap}
-.lang a:hover,.lang a:focus-visible{border-color:var(--ink)}
+.lang{display:inline-flex;gap:12px;margin-left:auto;font-size:14px}.lang button{appearance:none;background:none;border:0;padding:0;font:inherit;color:var(--soft);cursor:pointer;border-bottom:1px solid transparent;line-height:1.4}.lang button[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}.lang button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+main>section[lang]{display:none;border-bottom:0}html[data-lang="en"] main>section[lang="en"],html[data-lang="ko"] main>section[lang="ko"],html[data-lang="pt"] main>section[lang="pt-PT"]{display:block}
+.en,.ko,.pt{display:none}html[data-lang="en"] .en,html[data-lang="ko"] .ko,html[data-lang="pt"] .pt{display:inline}
 .wrap{max-width:680px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left))}
 section{padding:36px 0 44px;border-bottom:1px solid var(--line);scroll-margin-top:58px}
 h1{font-family:"Lora",Georgia,"Times New Roman",serif;font-size:30px;line-height:1.2;font-weight:600;letter-spacing:0;margin:0 0 6px}
@@ -48,7 +49,7 @@ li{margin:3px 0}
 </style>
 </head>
 <body>
-<header class="bar"><div class="bar-in"><div class="crumb"><a class="home" href="../../">Gatinho Reguila</a><span class="sep" aria-hidden="true">/</span><a class="mark" href="../">EJECT</a></div><nav class="lang" aria-label="Language"><a href="#en" hreflang="en">English</a><a href="#ko" hreflang="ko">한국어</a><a href="#pt" hreflang="pt-PT">Português</a></nav></div></header>
+<header class="bar"><div class="bar-in"><div class="crumb"><a class="home" href="../../">Gatinho Reguila</a><span class="sep" aria-hidden="true">/</span><a class="mark" href="../">EJECT</a></div><nav class="lang" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ko" aria-pressed="false">한국어</button><button type="button" data-lang="pt" aria-pressed="false">PT</button></nav></div></header>
 <main class="wrap">
 <section id="en" lang="en">
 <h1>Privacy Policy</h1>
@@ -196,8 +197,9 @@ li{margin:3px 0}
 </section>
 </main>
 <footer class="wrap foot">
-<p><a href="../">EJECT</a> · <a href="../support/">Support · 지원 · Suporte</a></p>
+<p><a href="../">EJECT</a> · <a href="../support/"><span class="en">Support</span><span class="ko">지원</span><span class="pt">Suporte</span></a></p>
 <p>© 2026 <a href="../../">Gatinho Reguila</a>, Unipessoal Lda · 2026-10-29</p>
 </footer>
+<script>(function(){var r=document.documentElement,K="grgs.lang";function set(l){r.setAttribute("data-lang",l);r.lang=l==="pt"?"pt-PT":l;document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.lang===l))});try{localStorage.setItem(K,l)}catch(e){}}var s=r.getAttribute("data-lang")||"en";set(s);document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.lang)})})})();</script>
 </body>
 </html>
