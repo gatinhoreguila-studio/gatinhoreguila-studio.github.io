@@ -11,8 +11,9 @@
 <meta property="og:image" content="https://gatinhoreguila.com/og.png">
 <meta property="og:url" content="https://gatinhoreguila.com/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" href="icon.png">
-<link rel="apple-touch-icon" href="icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&display=swap">
@@ -39,10 +40,15 @@ p{margin:0}
 .mission small{display:block;color:var(--mute);font-size:14px;margin-top:4px}
 .item{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
 .list .item:last-child{border-bottom:0}
-.item b{font-size:16px;display:inline-flex;align-items:center;gap:9px}
-.item b img{image-rendering:pixelated;height:auto;opacity:.9}
+.item b{font-size:16px;display:inline-flex;align-items:center;gap:12px}
+.ic{flex:none;width:40px;height:40px;border-radius:9px;background:var(--soft);display:inline-flex;align-items:center;justify-content:center}
+.item b img{image-rendering:pixelated;height:auto;display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ic{background:#d8d1c7}}
+:root[data-theme="dark"] .ic{background:#d8d1c7}
 .item .d{grid-column:1;color:var(--mute);font-size:14.5px}
-.item .s{grid-column:2;grid-row:1;color:var(--mute);font-size:13px;white-space:nowrap}
+.item .s{grid-column:2;grid-row:1;align-self:center;color:var(--mute);font-size:13px;white-space:nowrap}
+.item>b{grid-column:1;grid-row:1;align-self:center}
+.item .d{margin-top:8px}
 .item .l{grid-column:1;font-size:14px;margin-top:2px}
 .item .l a{text-decoration:none;border-bottom:1px solid var(--line)}
 .item .l a:hover{border-color:var(--fg)}
@@ -96,16 +102,16 @@ span.ko,span.pt{display:none} html[data-lang="ko"] span.ko,html[data-lang="pt"] 
 <h2><span class="en">Now</span><span class="ko">지금</span><span class="pt">Agora</span></h2>
 <div class="list">
 <div class="item">
-  <b><img data-ic="film" alt="">EJECT</b><span class="s">iPhone · <span class="en">coming soon</span><span class="ko">출시 준비 중</span><span class="pt">em breve</span></span>
+  <b><span class="ic"><img data-ic="film" alt=""></span>EJECT</b><span class="s">iPhone · <span class="en">coming soon</span><span class="ko">출시 준비 중</span><span class="pt">em breve</span></span>
   <span class="d"><span class="en">Pick photos, get a film photo book. Developed on your phone, nothing leaves it.</span><span class="ko">사진을 고르면 필름 사진집이 나와요. 폰 안에서 현상되고, 밖으로 나가지 않아요.</span><span class="pt">Escolha fotos, receba um álbum de filme. Revelado no telemóvel, nada sai dele.</span></span>
-  <span class="l"><a href="eject/"><span class="en">About</span><span class="ko">소개</span><span class="pt">Sobre</span></a><a href="eject/support/"><span class="en">Support</span><span class="ko">지원</span><span class="pt">Suporte</span></a><a href="eject/privacy/"><span class="en">Privacy</span><span class="ko">개인정보</span><span class="pt">Privacidade</span></a></span>
+  <span class="l"><a href="eject/"><span class="en">More</span><span class="ko">자세히 보기</span><span class="pt">Saber mais</span></a><a href="eject/support/"><span class="en">Support</span><span class="ko">지원</span><span class="pt">Suporte</span></a><a href="eject/privacy/"><span class="en">Privacy</span><span class="ko">개인정보</span><span class="pt">Privacidade</span></a></span>
 </div>
 <div class="item">
-  <b><img data-ic="pig" alt="">Gumdang Farm</b><span class="s"><span class="en">in the making</span><span class="ko">만드는 중</span><span class="pt">a caminho</span></span>
+  <b><span class="ic"><img data-ic="pig" alt=""></span>Gumdang Farm</b><span class="s"><span class="en">in the making</span><span class="ko">만드는 중</span><span class="pt">a caminho</span></span>
   <span class="d"><span class="en">A farm that keeps growing while you're away.</span><span class="ko">잠시 떠나 있어도 자라는 농장.</span><span class="pt">Uma quinta que continua a crescer enquanto não está.</span></span>
 </div>
 <div class="item">
-  <b><img data-ic="owl" alt="">Owl Tower</b><span class="s"><span class="en">in the making</span><span class="ko">만드는 중</span><span class="pt">a caminho</span></span>
+  <b><span class="ic"><img data-ic="owl" alt=""></span>Owl Tower</b><span class="s"><span class="en">in the making</span><span class="ko">만드는 중</span><span class="pt">a caminho</span></span>
   <span class="d"><span class="en">Seventy-two floors of riddles.</span><span class="ko">수수께끼로 오르는 72층.</span><span class="pt">Setenta e dois andares de enigmas.</span></span>
 </div>
 </div>
@@ -138,7 +144,7 @@ function maxX(){ return Math.max(0, lane.clientWidth - cat.offsetWidth); }
 function place(){ cat.style.transform=`translateX(${-x}px)`; cat.classList.toggle('flip', dir>0); }
 function pick(){ if(isNight()){ state='sleep'; show('sleep'); wait=60; return; } const r=Math.random(); if(r<.35 && !reduce){ state='walk'; dir=(x<=0)?-1:(x>=maxX()?1:(Math.random()<.5?1:-1)); wait=1.5+Math.random()*3; } else if(r<.7){ state='sit'; show('sit'); wait=4+Math.random()*5; } else if(r<.85){ state='lie'; show('lie'); wait=2.5; } else { state='sleep'; show('sleep'); wait=5+Math.random()*5; } }
 function loop(t){ const dt=Math.min(.05,(t-last)/1000); last=t; if(!held){ wait-=dt; if(state==='walk'){ x+= -dir*14*dt; if(x<0){x=0;dir=-1;wait=0;} if(x>maxX()){x=maxX();dir=1;wait=0;} ft+=dt; if(ft>.16){ ft=0; f=(f+1)%4; show('walk'+f); } } if(wait<=0) pick(); } place(); requestAnimationFrame(loop); }
-show('sit'); place(); requestAnimationFrame(loop);
+show('sit'); x=maxX(); place(); requestAnimationFrame(loop);
 cat.addEventListener('click',()=>{ held=true; show('pet'); const L=LINES[root.getAttribute('data-lang')]||LINES.en; say.textContent=isNight()?NIGHT[root.getAttribute('data-lang')]||'zzz':L[li++%L.length]; say.classList.add('on'); setTimeout(()=>say.classList.remove('on'),1800); setTimeout(()=>{ held=false; state='sit'; show('sit'); wait=4; },1400); });
 </script>
 </body>
