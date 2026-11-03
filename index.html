@@ -65,9 +65,9 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
 /* 꼬비: 작게, 한 마리 */
 .cat{appearance:none;background:none;border:0;padding:0;width:54px;height:57px;position:absolute;right:0;bottom:0;cursor:pointer;-webkit-tap-highlight-color:transparent;will-change:transform}
 .cat.flip img{transform:scaleX(-1)}
-.cat img{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;opacity:0;transition:opacity .12s}
+.cat img{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;opacity:0}
 .cat img.on{opacity:1}
-.say{position:absolute;right:100%;top:40%;transform:translate(-8px,-50%);white-space:nowrap;font-size:13px;color:var(--mute);opacity:0;transition:opacity .25s;pointer-events:none}
+.say{position:absolute;right:0;bottom:100%;transform:translateY(-6px);white-space:nowrap;font-size:13px;color:var(--mute);opacity:0;transition:opacity .25s;pointer-events:none}
 .say.on{opacity:1}
 .cat:focus-visible{outline:2px solid var(--fg);outline-offset:4px;border-radius:4px}
 @media (max-width:420px){.cat{width:45px;height:47.5px}.lane{height:47.5px}}
@@ -75,7 +75,9 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
 html[data-lang="ko"] .en,html[data-lang="pt"] .en{display:none}
 html[data-lang="ko"] .ko,html[data-lang="pt"] .pt{display:revert}
 span.ko,span.pt{display:none} html[data-lang="ko"] span.ko,html[data-lang="pt"] span.pt{display:inline}
-@media (prefers-reduced-motion:reduce){.cat img{transition:none}}
+@keyframes purr{0%,100%{translate:0 0}25%{translate:-1px 0}75%{translate:1px 0}}
+.cat.purr img.on{animation:purr .09s steps(2) infinite}
+@media (prefers-reduced-motion:reduce){.cat.purr img.on{animation:none}}
 </style>
 </head>
 <body><main>
@@ -127,7 +129,7 @@ document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',
 try{ const s=localStorage.getItem('grgs.lang'); if(s==='ko'||s==='pt') setLang(s); }catch(e){}
 // 꼬비: 제목 옆 레인을 천천히 걷다 앉고, 가끔 기지개·낮잠. 포르투 밤엔 잠. 누르면 하트+한마디
 const cat=document.getElementById('cat'), lane=document.getElementById('lane'); const IM={}; const say=document.createElement('span'); say.className='say'; cat.appendChild(say);
-const LINES={en:['mew.','Take your time.','Still here.','I\'m not a logo.','Thanks for stopping by.'],ko:['냐.','천천히 보세요.','아직 여기 있어요.','로고 아니에요.','들러 줘서 고마워요.'],pt:['miau.','Com calma.','Ainda aqui.','Não sou um logótipo.','Obrigado por passar.']}; let li=0;
+const LINES={"en": ["mew.", "Take your time.", "Still here.", "I'm not a logo.", "Thanks for stopping by.", "prrrr…", "Warm in here.", "No snacks. Yet.", "One pet, received.", "A little more.", "Sleepy.", "Not the tail.", "Porto is all hills today.", "Don't tell Simba.", "Good to see you.", "Come back soon."], "ko": ["냐.", "천천히 보세요.", "아직 여기 있어요.", "로고 아니에요.", "들러 줘서 고마워요.", "그르릉…", "여기 따뜻해요.", "간식은 없어요. 아직.", "쓰다듬기 1회 접수.", "조금만 더.", "졸려요.", "꼬리는 안 돼요.", "포르투는 오늘도 언덕이에요.", "심바한테는 비밀.", "오늘도 와 줬네요.", "또 놀러 와요."], "pt": ["miau.", "Com calma.", "Ainda aqui.", "Não sou um logótipo.", "Obrigado por passar.", "rrrrr…", "Está quentinho aqui.", "Petiscos não há. Ainda.", "Uma festa, recebida.", "Só mais um bocadinho.", "Que sono.", "A cauda não.", "O Porto hoje é só subidas.", "Não contes ao Simba.", "Que bom ver-te.", "Volta em breve."]}; let li=0;
 const NIGHT={en:'zzz',ko:'쿨쿨',pt:'zzz'};
 Object.entries(SPR).forEach(([k,src])=>{ const im=new Image(); im.src=src; im.alt=''; IM[k]=im; cat.appendChild(im); });
 document.querySelectorAll('[data-ic]').forEach(im=>{ im.src=ICON[im.dataset.ic]; im.onload=()=>{ im.style.width=(im.naturalWidth*2)+'px'; }; });
@@ -142,7 +144,21 @@ function place(){ cat.style.transform=`translateX(${-x}px)`; cat.classList.toggl
 function pick(){ if(isNight()){ state='sleep'; show('sleep'); wait=60; return; } const r=Math.random(); if(r<.35 && !reduce){ state='walk'; dir=(x<=0)?-1:(x>=maxX()?1:(Math.random()<.5?1:-1)); wait=1.5+Math.random()*3; } else if(r<.7){ state='sit'; show('sit'); wait=4+Math.random()*5; } else if(r<.85){ state='lie'; show('lie'); wait=2.5; } else { state='sleep'; show('sleep'); wait=5+Math.random()*5; } }
 function loop(t){ const dt=Math.min(.05,(t-last)/1000); last=t; if(!held){ wait-=dt; if(state==='walk'){ x+= -dir*14*dt; if(x<0){x=0;dir=-1;wait=0;} if(x>maxX()){x=maxX();dir=1;wait=0;} ft+=dt; if(ft>.16){ ft=0; f=(f+1)%4; show('walk'+f); } } if(wait<=0) pick(); } place(); requestAnimationFrame(loop); }
 show('sit'); x=maxX(); place(); requestAnimationFrame(loop);
-cat.addEventListener('click',()=>{ held=true; show('pet'); const L=LINES[root.getAttribute('data-lang')]||LINES.en; say.textContent=isNight()?NIGHT[root.getAttribute('data-lang')]||'zzz':L[li++%L.length]; say.classList.add('on'); setTimeout(()=>say.classList.remove('on'),1800); setTimeout(()=>{ held=false; state='sit'; show('sit'); wait=4; },1400); });
+let ac=null;
+function purrSound(){ try{ ac=ac||new (window.AudioContext||window.webkitAudioContext)(); const t=ac.currentTime, d=1.1, n=Math.floor(ac.sampleRate*d);
+  const buf=ac.createBuffer(1,n,ac.sampleRate), x=buf.getChannelData(0); let last=0; for(let i=0;i<n;i++){ last=(last+0.02*(Math.random()*2-1))/1.02; x[i]=last*3.5; }
+  const src=ac.createBufferSource(); src.buffer=buf; const lp=ac.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=320;
+  const g=ac.createGain(); g.gain.value=0; const am=ac.createOscillator(); am.frequency.value=24; const amg=ac.createGain(); amg.gain.value=0.05;
+  am.connect(amg); amg.connect(g.gain); src.connect(lp); lp.connect(g); g.connect(ac.destination);
+  const env=ac.createGain(); g.disconnect(); g.connect(env); env.connect(ac.destination); env.gain.setValueAtTime(0,t); env.gain.linearRampToValueAtTime(1,t+.15); env.gain.linearRampToValueAtTime(1,t+d-.3); env.gain.linearRampToValueAtTime(0,t+d);
+  g.gain.setValueAtTime(0.06,t); src.start(t); am.start(t); src.stop(t+d); am.stop(t+d); }catch(e){} }
+let lastLine=-1;
+cat.addEventListener('click',()=>{ held=true; show('pet'); cat.classList.add('purr'); purrSound();
+  const lang=root.getAttribute('data-lang'); const L=LINES[lang]||LINES.en;
+  let k; do{ k=Math.floor(Math.random()*L.length); }while(k===lastLine && L.length>1); lastLine=k;
+  say.textContent=isNight()?(NIGHT[lang]||'zzz'):L[k]; say.classList.add('on');
+  setTimeout(()=>say.classList.remove('on'),2000);
+  setTimeout(()=>{ cat.classList.remove('purr'); held=false; state='sit'; show('sit'); wait=4; },1400); });
 </script>
 </body>
 </html>
