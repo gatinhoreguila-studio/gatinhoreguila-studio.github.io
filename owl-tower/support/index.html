@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#f7f9fc">
 <link rel="icon" type="image/png" href="../../icon.png">
 <title>Owl Tower — Support</title>
-<meta name="description" content="Owl Tower support: moving devices, restore purchases, refunds and question reports.">
+<meta name="description" content="Owl Tower help: moving to a new device, restoring the Full Pass, refunds, wrong questions, and how to reach us.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
@@ -68,15 +68,14 @@ main a{color:var(--pri);text-decoration-color:color-mix(in srgb,var(--pri) 40%,t
 .foot a{text-decoration-color:var(--line)}
 .lang{flex:none}.lang button{white-space:nowrap}
 @media (max-width:480px){.crumb .home{font-size:0;gap:0}}
-html[data-lang="pt"] main>section[lang="en"]{display:block}
 </style>
 </head>
 <body>
-<header class="bar"><div class="bar-in"><div class="crumb"><a class="home" href="../../">Gatinho Reguila</a><span class="sep" aria-hidden="true">/</span><span class="mark">Owl Tower</span></div><nav class="lang" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ko" aria-pressed="false">한국어</button><button type="button" data-lang="pt" aria-pressed="false">PT</button></nav></div></header>
+<header class="bar"><div class="bar-in"><div class="crumb"><a class="home" href="../../">Gatinho Reguila</a><span class="sep" aria-hidden="true">/</span><a class="mark" href="../">Owl Tower</a></div><nav class="lang" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ko" aria-pressed="false">한국어</button><button type="button" data-lang="pt" aria-pressed="false">PT</button></nav></div></header>
 <main class="wrap">
 <section id="en" lang="en">
 <h1>Support</h1>
-<p class="date">Owl Tower: Stock Action Quiz</p>
+<p class="date">Owl Tower: Stock Action Quiz · Android</p>
 <p class="short">Stuck on a floor, lost your progress, or found a question that’s wrong? Write to <a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a>. A human reads every message, usually within two working days.</p>
 <h2>Moving to a new device</h2>
 <p>Your progress lives only on your device. On the old device, open Settings → “Copy data” and send that text to yourself. On the new device, open Settings → “Paste data”. Then tap “Restore Purchases” to bring back the Full Pass.</p>
@@ -116,10 +115,27 @@ html[data-lang="pt"] main>section[lang="en"]{display:block}
 <h2>개인정보</h2>
 <p>부엉 무림탑은 데이터를 수집하지 않아요. <a href="../privacy/">개인정보 처리방침</a>을 봐 주세요.</p>
 </section>
+<section id="pt" lang="pt-PT">
+<h1>Suporte</h1>
+<p class="date">Owl Tower: Stock Action Quiz · Android</p>
+<p class="short">Preso num andar, perdeste o progresso ou encontraste uma pergunta errada? Escreve para <a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a>. Uma pessoa lê todas as mensagens, normalmente em dois dias úteis.</p>
+<h2>Mudar de dispositivo</h2>
+<p>O teu progresso só existe no teu dispositivo. No dispositivo antigo, abre Definições → «Copy data» e envia esse texto para ti. No novo, abre Definições → «Paste data». Depois toca em «Restore Purchases» para recuperar o Full Pass.</p>
+<h2>Restaurar compras</h2>
+<p>Compraste o Full Pass mas as torres estão bloqueadas (telemóvel novo, aplicação reinstalada)? Abre o ecrã do Full Pass e toca em «Restore Purchases», com a mesma conta Google com que compraste. É grátis.</p>
+<h2>Reembolsos</h2>
+<p>No Android, abre o Google Play → Perfil → Pagamentos e subscrições → Orçamento e histórico, ou consulta a <a href="https://support.google.com/googleplay/answer/2479637?hl=pt">ajuda de reembolsos do Google Play</a>. Quem decide os reembolsos é a Google. Quando um reembolso é aceite, o Full Pass volta a ficar bloqueado. Os andares grátis e o teu progresso mantêm-se.</p>
+<h2>Uma pergunta parece errada</h2>
+<p>Leis, impostos e números mudam. As perguntas foram escritas com referência a novembro de 2026. Se alguma estiver errada ou desatualizada, envia-nos o texto da pergunta (uma captura de ecrã é perfeita) e corrigimos na próxima atualização.</p>
+<h2>Não é aconselhamento financeiro</h2>
+<p>O Owl Tower é um jogo educativo. Nada nele te diz para comprar ou vender qualquer ação ou produto.</p>
+<h2>Privacidade</h2>
+<p>O Owl Tower não recolhe dados. Vê a <a href="../privacy/">política de privacidade</a>.</p>
+</section>
 </main>
 <footer class="wrap foot">
-<p><a href="../privacy/"><span class="en">Privacy Policy</span><span class="ko">개인정보 처리방침</span><span class="pt">Privacy Policy</span></a></p>
-<p>© 2026 <a href="../../">Gatinho Reguila</a>, Unipessoal Lda</p>
+<p><a href="../"><span class="en">Owl Tower</span><span class="ko">부엉 무림탑</span><span class="pt">Owl Tower</span></a> · <a href="../privacy/"><span class="en">Privacy Policy</span><span class="ko">개인정보 처리방침</span><span class="pt">Política de Privacidade</span></a></p>
+<p>© 2026 <a href="../../">Gatinho Reguila</a>, Unipessoal Lda · Porto, Portugal</p>
 </footer>
 <script>(function(){var r=document.documentElement,K="grgs.lang";function set(l){r.setAttribute("data-lang",l);r.lang=l==="pt"?"pt-PT":l;document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.lang===l))});try{localStorage.setItem(K,l)}catch(e){}}var s=r.getAttribute("data-lang")||"en";set(s);document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.lang)})})})();</script>
 </body>
