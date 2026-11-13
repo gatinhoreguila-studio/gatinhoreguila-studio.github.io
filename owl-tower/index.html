@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f7f9fc">
+<link rel="icon" type="image/png" href="../icon.png">
+<title>Owl Tower — Stock Action Quiz</title>
+<meta name="description" content="Owl Tower: a pixel kung-fu quiz about money. One minute a round, 96 floors. No ads, no subscription. Android coming soon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<script>try{var l=localStorage.getItem("grgs.lang");if(l==="ko"||l==="pt")document.documentElement.setAttribute("data-lang",l)}catch(e){}</script>
+<style>
+:root{--paper:#f7f9fc;--ink:#111a30;--soft:#57627a;--line:#d3dcea;--card:#ffffff;--sec:#e5ecf7;--pri:#1640ac;--prifg:#f7f9fc;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--paper:#0b0f19;--ink:#eaf0f8;--soft:#9ba6b9;--line:#262f40;--card:#111727;--sec:#1e2535;--pri:#5b92f5;--prifg:#0e1424}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 Geist,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:3px}
+.bar{position:sticky;top:0;z-index:2;background:var(--paper);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:680px;margin:0 auto;padding:10px max(16px,env(safe-area-inset-right)) 10px max(16px,env(safe-area-inset-left));display:flex;align-items:center;justify-content:space-between;gap:10px}
+.crumb{display:flex;align-items:center;gap:8px;min-width:0;font-size:14px;white-space:nowrap}.crumb .home{color:var(--soft);text-decoration:none}.crumb .home:hover{color:var(--ink)}.crumb .sep{color:var(--line)}.mark{font-weight:600;letter-spacing:.18em;text-decoration:none}
+.lang{display:inline-flex;gap:12px;margin-left:auto;font-size:14px}.lang button{appearance:none;background:none;border:0;padding:0;font:inherit;color:var(--soft);cursor:pointer;border-bottom:1px solid transparent;line-height:1.4}.lang button[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}.lang button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+main>section[lang]{display:none;border-bottom:0}html[data-lang="en"] main>section[lang="en"],html[data-lang="ko"] main>section[lang="ko"],html[data-lang="pt"] main>section[lang="pt-PT"]{display:block}
+.en,.ko,.pt{display:none}html[data-lang="en"] .en,html[data-lang="ko"] .ko,html[data-lang="pt"] .pt{display:inline}
+.wrap{max-width:680px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left))}
+section{padding:36px 0 44px;border-bottom:1px solid var(--line);scroll-margin-top:58px}
+h1{font-family:"Pixelify Sans",ui-monospace,monospace;font-size:30px;line-height:1.2;font-weight:600;letter-spacing:0;margin:0 0 6px}
+h2{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:34px 0 8px}
+h3{font-size:17px;font-weight:600;margin:28px 0 6px}
+p,ul{margin:0 0 14px}
+ul{padding-left:1.2em}
+li{margin:3px 0}
+.tag{font-size:20px;margin:0 0 18px}
+.lead{font-size:18px}
+.short{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:18px 0 6px;background:transparent}
+.meta,.date,.links{font-size:14px;color:var(--soft)}
+.links a{color:var(--soft)}
+.hero{text-align:center;padding:40px 0 4px}
+.hero svg{display:block;margin:0 auto 14px;width:220px;max-width:70%;height:auto}
+.hero .name{font-family:"Pixelify Sans",ui-monospace,monospace;font-size:34px;font-weight:600;letter-spacing:.3em;margin:0;padding-left:.32em}
+[lang=ko]{word-break:keep-all;overflow-wrap:break-word}
+[lang=ko] h2{letter-spacing:.04em}
+.foot{padding-top:24px;padding-bottom:calc(40px + env(safe-area-inset-bottom));font-size:13px;color:var(--soft)}
+.foot p{margin:0 0 6px}
+.foot a{color:var(--soft)}
+
+/* GRGS shadcn 테마 (코발트) */
+.bar{background:color-mix(in srgb,var(--paper) 90%,transparent)}
+.bar-in{max-width:760px;min-height:56px;padding-top:6px;padding-bottom:6px}
+.crumb .home{display:inline-flex;align-items:center;gap:8px;font-family:"Pixelify Sans",ui-monospace,monospace;font-weight:700;letter-spacing:.04em;color:var(--ink);font-size:15px}
+.crumb .home::before{content:"";width:24px;height:24px;flex:none;background:url(/icon.png) center/contain no-repeat;image-rendering:pixelated;border-radius:2px}
+.crumb .mark{font-family:"Geist Mono",ui-monospace,monospace;font-weight:500;letter-spacing:.08em;color:var(--soft)}
+.lang{gap:2px;padding:4px;background:var(--sec);border-radius:6px;font-size:13px}
+.lang button{height:36px;padding:0 12px;border:0!important;border-radius:4px;font-weight:500;color:var(--soft)}
+.lang button[aria-pressed="true"]{background:var(--paper);color:var(--ink);box-shadow:0 1px 2px rgba(10,20,40,.08)}
+.wrap{max-width:760px}
+h1{font-family:"Pixelify Sans",ui-monospace,monospace;font-weight:700;letter-spacing:0;line-height:1.1}
+[lang=ko] h1{font-family:Geist,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-weight:600}
+h2{font-family:"Geist Mono",ui-monospace,monospace;font-weight:500;color:var(--pri)}
+main a{color:var(--pri);text-decoration-color:color-mix(in srgb,var(--pri) 40%,transparent)}
+.short{background:var(--card);border-radius:6px;border-color:var(--line)}
+.kv{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px 18px}
+.hero .name{font-family:"Pixelify Sans",ui-monospace,monospace;font-weight:700;letter-spacing:.18em}
+.hero svg{color:var(--pri)}
+.foot a{text-decoration-color:var(--line)}
+.lang{flex:none}.lang button{white-space:nowrap}
+@media (max-width:480px){.crumb .home{font-size:0;gap:0}}
+.hero .owl{display:block;margin:0 auto 12px;image-rendering:pixelated}
+.soon{margin:26px 0 18px}.pill{display:inline-block;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--soft);background:var(--card)}.play{display:inline-block;padding:10px 18px;border-radius:6px;background:var(--pri);color:var(--prifg)!important;text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<header class="bar"><div class="bar-in"><div class="crumb"><a class="home" href="../">Gatinho Reguila</a><span class="sep" aria-hidden="true">/</span><span class="mark">Owl Tower</span></div><nav class="lang" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ko" aria-pressed="false">한국어</button><button type="button" data-lang="pt" aria-pressed="false">PT</button></nav></div></header>
+<main class="wrap">
+<div class="hero"><img class="owl" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAPCAYAAADUFP50AAAA2UlEQVR42qWSoQ7CMBCGv5EpHmFBE1ISgi5mwWKmkBPIGXgVHIIgFhQKg10wTBMIE2AQBIVEUwQUxljJEn7Tu+/uvza5wr+SwlFSOKpovZQuem6TPLMUjvLc5gezs03PBpXDvo16oj9cAOADYb/ziJ8MgAdTcXK2StlJjWqLIuzjqeXtgc1+BUAgjwDcUsxoHI0HrziQ38xo7Pb8V3zRrPauzyYhuesAaJ92FGE2QJycLb2CKHWrVlSpM5uEzJdr3YuVXfSv36VNubpOhbpOhTLlRlP6NLG/dAfEQFd2T4hCmQAAAABJRU5ErkJggg==" alt="" width="112" height="120"><p class="name">OWL TOWER</p></div>
+<section id="en" lang="en"><h1>Stock Action Quiz</h1>
+<p class="tag">One minute a round. Answer right and the master goes flying.</p>
+<p class="lead">Owl Tower is a pixel kung-fu quiz about money. Climb 96 floors, one quick round at a time, and learn how stocks, saving and taxes actually work along the way.</p>
+<h2>How it plays</h2>
+<p>Each floor is one question and one minute. Get it right and the master on that floor goes flying. Miss, and you try again. Earn feathers, dress up your owl, and keep the certificate when you clear a tower.</p>
+<h2>Your own numbers</h2>
+<p>Put in your own salary or savings and the game makes questions out of them. Those numbers stay on your phone; we never see them.</p>
+<h2>No ads, no subscription</h2>
+<p>The first floors are free. The Full Pass is a single one-time purchase through Google Play that opens every tower, forever. Nothing else to buy, nothing to renew.</p>
+<h2>Not financial advice</h2>
+<p>Owl Tower is a financial education game. Nothing in it tells you to buy or sell any stock or product. Questions are written as of November 2026.</p>
+<p class="soon" data-soon><span class="pill">Android coming soon</span></p>
+<!-- 공개 날: 위 줄을 <p class="soon"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.owltower">Google Play</a></p> 로 -->
+<p class="links"><a href="support/">Support</a> · <a href="privacy/">Privacy Policy</a> · <a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a></p>
+<p class="meta">Made in Porto by Gatinho Reguila.</p>
+</section>
+<section id="ko" lang="ko"><h1>주식 액션 퀴즈</h1>
+<p class="tag">한 판 1분. 맞히면 사범님이 날아가요.</p>
+<p class="lead">부엉 무림탑은 돈 공부를 하는 도트 무협 퀴즈예요. 짧은 한 판씩 96층을 오르다 보면 주식, 저축, 세금이 실제로 어떻게 돌아가는지 알게 돼요.</p>
+<h2>이렇게 놀아요</h2>
+<p>한 층에 문제 하나, 1분. 맞히면 그 층 사범님이 날아가고, 틀리면 다시 도전해요. 깃털을 모아 부엉이를 꾸미고, 탑을 다 오르면 자격증이 남아요.</p>
+<h2>내 숫자로</h2>
+<p>내 월급이나 투자액을 넣으면 그 숫자로 문제를 만들어 줘요. 그 숫자는 내 폰 안에만 있고, 우리는 볼 수 없어요.</p>
+<h2>광고 없음, 구독 없음</h2>
+<p>처음 몇 층은 무료예요. 「전권」은 구글 플레이에서 한 번만 사면 모든 탑이 영원히 열려요. 더 살 것도, 갱신할 것도 없어요.</p>
+<h2>투자 권유 아님</h2>
+<p>부엉 무림탑은 금융 교육용 게임이에요. 어떤 종목이나 상품도 사고팔라고 하지 않아요. 문제는 2026년 11월 기준으로 썼어요.</p>
+<p class="soon" data-soon><span class="pill">안드로이드 곧 출시</span></p>
+<!-- 공개 날: 위 줄을 <p class="soon"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.owltower">Google Play</a></p> 로 -->
+<p class="links"><a href="support/">지원</a> · <a href="privacy/">개인정보 처리방침</a> · <a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a></p>
+<p class="meta">포르투에서 Gatinho Reguila가 만들어요.</p>
+</section>
+<section id="pt" lang="pt-PT"><h1>Stock Action Quiz</h1>
+<p class="tag">Um minuto por ronda. Acerta e o mestre sai a voar.</p>
+<p class="lead">O Owl Tower é um quiz de kung fu em pixel sobre dinheiro. Sobe 96 andares, uma ronda rápida de cada vez, e aprende pelo caminho como funcionam mesmo as ações, a poupança e os impostos.</p>
+<h2>Como se joga</h2>
+<p>Cada andar é uma pergunta e um minuto. Acerta e o mestre desse andar sai a voar. Falha e tentas outra vez. Ganha penas, veste a tua coruja e guarda o certificado quando terminares uma torre.</p>
+<h2>Os teus números</h2>
+<p>Introduz o teu salário ou as tuas poupanças e o jogo faz perguntas a partir deles. Esses números ficam no teu telemóvel; nunca os vemos.</p>
+<h2>Sem anúncios, sem subscrição</h2>
+<p>Os primeiros andares são grátis. O Full Pass é uma única compra no Google Play que abre todas as torres, para sempre. Nada mais para comprar, nada para renovar.</p>
+<h2>Não é aconselhamento financeiro</h2>
+<p>O Owl Tower é um jogo de educação financeira. Nada nele te diz para comprar ou vender qualquer ação ou produto. As perguntas referem-se a novembro de 2026.</p>
+<p class="soon" data-soon><span class="pill">Android em breve</span></p>
+<!-- 공개 날: 위 줄을 <p class="soon"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.owltower">Google Play</a></p> 로 -->
+<p class="links"><a href="support/">Suporte</a> · <a href="privacy/">Política de Privacidade</a> · <a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a></p>
+<p class="meta">Feito no Porto pela Gatinho Reguila.</p>
+</section>
+</main>
+<footer class="wrap foot">
+<p><a href="support/"><span class="en">Support</span><span class="ko">지원</span><span class="pt">Suporte</span></a> · <a href="privacy/"><span class="en">Privacy Policy</span><span class="ko">개인정보 처리방침</span><span class="pt">Política de Privacidade</span></a></p>
+<p>© 2026 <a href="../">Gatinho Reguila</a>, Unipessoal Lda · Porto, Portugal</p>
+</footer>
+<script>(function(){var r=document.documentElement,K="grgs.lang";function set(l){r.setAttribute("data-lang",l);r.lang=l==="pt"?"pt-PT":l;document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.lang===l))});try{localStorage.setItem(K,l)}catch(e){}}var s=r.getAttribute("data-lang")||"en";set(s);document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.lang)})})})();</script>
+</body>
+</html>
