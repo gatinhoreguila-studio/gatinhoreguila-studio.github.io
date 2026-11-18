@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Fredoka:wght@400;600&family=Zen+Maru+Gothic:wght@500;700&family=Pixelify+Sans:wght@700&display=swap">
-<script>(function(){try{var r=document.documentElement,l=localStorage.getItem("grgs.lang"),j=localStorage.getItem("grgs.lang.ja");if(j==="1")l="ja";if(!l){var n=(navigator.language||"").toLowerCase();l=n.indexOf("ko")===0?"ko":n.indexOf("ja")===0?"ja":n.indexOf("pt")===0?"pt":"en"}if(l==="ko"||l==="pt"||l==="ja")r.setAttribute("data-lang",l)}catch(e){}})();</script>
+<script>(function(){try{var r=document.documentElement,l=localStorage.getItem("grgs.lang"),j=localStorage.getItem("grgs.lang.x");if(j==="ja"||j==="es")l=j;if(!l){var n=(navigator.language||"").toLowerCase();l=n.indexOf("ko")===0?"ko":n.indexOf("ja")===0?"ja":n.indexOf("pt")===0?"pt":n.indexOf("es")===0?"es":"en"}if(l==="ko"||l==="pt"||l==="ja"||l==="es")r.setAttribute("data-lang",l)}catch(e){}})();</script>
 <style>
 :root{--paper:#F3F1ED;--ink:#221E1C;--soft:#78726C;--line:#DDD8D0;--card:#FFFFFF;--amb:#DE800A;color-scheme:light}
 *{box-sizing:border-box}
@@ -38,9 +38,9 @@ a{color:inherit}
 @media (max-width:480px){.crumb .home{font-size:0;gap:0}.lang button{padding:0 9px}}
 /* 언어 */
 main>section[lang]{display:none}
-html[data-lang="en"] section[lang="en"],html[data-lang="ko"] section[lang="ko"],html[data-lang="pt"] section[lang="pt-PT"],html[data-lang="ja"] section[lang="ja"]{display:block}
-.en,.ko,.pt,.ja{display:none}
-html[data-lang="en"] .en,html[data-lang="ko"] .ko,html[data-lang="pt"] .pt,html[data-lang="ja"] .ja{display:inline}
+html[data-lang="en"] section[lang="en"],html[data-lang="ko"] section[lang="ko"],html[data-lang="pt"] section[lang="pt-PT"],html[data-lang="ja"] section[lang="ja"],html[data-lang="es"] section[lang="es"]{display:block}
+.en,.ko,.pt,.ja,.es{display:none}
+html[data-lang="en"] .en,html[data-lang="ko"] .ko,html[data-lang="pt"] .pt,html[data-lang="ja"] .ja,html[data-lang="es"] .es{display:inline}
 /* 글꼴: 안 B */
 .h,h1,h2{font-family:Fredoka,"Apple SD Gothic Neo",sans-serif;font-weight:600;letter-spacing:0}
 [lang="ko"] .h,[lang="ko"] h1,[lang="ko"] h2{font-family:Jua,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-weight:400}
@@ -109,7 +109,7 @@ p{margin:0 0 14px}
 </style>
 </head>
 <body>
-<header class="bar"><div class="bar-in"><div class="crumb"><a class="home" href="../">Gatinho Reguila</a><span class="sep" aria-hidden="true">/</span><a class="mark" href="./">EJECT</a></div><nav class="lang" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ko" aria-pressed="false">한국어</button><button type="button" data-lang="ja" aria-pressed="false">日本語</button><button type="button" data-lang="pt" aria-pressed="false">PT</button></nav></div></header>
+<header class="bar"><div class="bar-in"><div class="crumb"><a class="home" href="../">Gatinho Reguila</a><span class="sep" aria-hidden="true">/</span><a class="mark" href="./">EJECT</a></div><nav class="lang" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ko" aria-pressed="false">한국어</button><button type="button" data-lang="ja" aria-pressed="false">日本語</button><button type="button" data-lang="pt" aria-pressed="false">PT</button><button type="button" data-lang="es" aria-pressed="false">ES</button></nav></div></header>
 <main class="wrap">
 
 
@@ -131,7 +131,7 @@ p{margin:0 0 14px}
 <div class="three">
   <div><b>Up to 2,000 photos</b><p>One trip, one year, one tap.</p></div>
   <div><b>3 rolls free</b><p>No sign-up. Start right away.</p></div>
-  <div><b>Stays on your phone</b><p>Photos leave only when you share them.</p></div>
+  <div><b>No ads. Stays on your phone</b><p>Photos leave only when you share them.</p></div>
 </div>
 <p class="by">Made in Porto by a photographer who got tired of editing one by one.</p>
 <div class="end"><p class="h">Throw them all in. <em>Done.</em></p><div class="stores"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.eject" rel="noopener"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small>Get it on</small><strong>Google Play</strong></span></a></div><p class="fine">iPhone coming soon</p></div>
@@ -156,7 +156,7 @@ p{margin:0 0 14px}
 <div class="three">
   <div><b>한 번에 2,000장</b><p>여행 한 번, 1년 치, 버튼 한 번.</p></div>
   <div><b>3롤은 무료</b><p>가입 없이 바로 시작해요.</p></div>
-  <div><b>폰 밖으로 안 나가요</b><p>사진은 직접 공유할 때만 나가요.</p></div>
+  <div><b>광고 없음, 폰 밖으로 안 나가요</b><p>사진은 직접 공유할 때만 나가요.</p></div>
 </div>
 <p class="by">포르투에서, 하나하나 보정하는 게 지겨워진 사진가가 만들었어요.</p>
 <div class="end"><p class="h">왕창 넣으면 <em>끝.</em></p><div class="stores"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.eject" rel="noopener"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small>다운로드</small><strong>Google Play</strong></span></a></div><p class="fine">iPhone은 곧 나와요</p></div>
@@ -181,7 +181,7 @@ p{margin:0 0 14px}
 <div class="three">
   <div><b>一度に2,000枚まで</b><p>旅行ひとつ、1年分、ボタンひとつ。</p></div>
   <div><b>3ロール無料</b><p>登録なしで、すぐ始められます。</p></div>
-  <div><b>スマホの外に出ません</b><p>写真は自分でシェアするときだけ。</p></div>
+  <div><b>広告なし、スマホの外に出ません</b><p>写真は自分でシェアするときだけ。</p></div>
 </div>
 <p class="by">ポルトで、1枚ずつ加工するのに疲れた写真家がつくりました。</p>
 <div class="end"><p class="h">全部入れたら、<em>終わり。</em></p><div class="stores"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.eject" rel="noopener"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small>ダウンロード</small><strong>Google Play</strong></span></a></div><p class="fine">iPhone版は近日公開</p></div>
@@ -206,22 +206,47 @@ p{margin:0 0 14px}
 <div class="three">
   <div><b>Até 2000 fotos</b><p>Uma viagem, um ano, um toque.</p></div>
   <div><b>3 rolos grátis</b><p>Sem registo. Começa já.</p></div>
-  <div><b>Fica no teu telemóvel</b><p>As fotos só saem quando as partilhas.</p></div>
+  <div><b>Sem anúncios. Fica no teu telemóvel</b><p>As fotos só saem quando as partilhas.</p></div>
 </div>
 <p class="by">Feita no Porto por um fotógrafo que se fartou de editar uma a uma.</p>
 <div class="end"><p class="h">Atira-as todas. <em>Pronto.</em></p><div class="stores"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.eject" rel="noopener"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small>Disponível no</small><strong>Google Play</strong></span></a></div><p class="fine">iPhone em breve</p></div>
 <p class="links"><a href="support/">Suporte</a> · <a href="privacy/">Política de Privacidade</a> · <a href="https://www.youtube.com/watch?v=JAmOI3M1YZo">Ver 15 segundos</a> · <a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a></p>
 </section>
+
+<section id="es" lang="es">
+<div class="hero">
+  <a class="logo" href="./"><img src="icon.png" alt="" width="44" height="44"><b>EJECT</b></a>
+  <p class="q">¿Harto de retocar fotos una a una?</p>
+  <h1 class="big"><span class="xl"><em>Mételas todas.</em></span><br>Filtros al azar, carrete <em>solo.</em></h1>
+  <p class="sub">Mete un viaje entero o un año entero. EJECT lo revela en un carrete de película, en tu móvil. Un look distinto cada vez.</p>
+  <div class="stores"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.eject" rel="noopener"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small>Disponible en</small><strong>Google Play</strong></span></a><span class="apple" aria-disabled="true"><svg viewBox="0 0 24 28" aria-hidden="true"><path d="M19.6 14.9c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.7 1.1-4.6 1.1-1 0-2.4-1.1-4-1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.1 1.5 12.1 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 3.9-1s2.4 1 4 .9c1.7 0 2.7-1.5 3.7-3 1.2-1.7 1.6-3.3 1.7-3.4-.1 0-3.2-1.2-3.2-4.7zM16.6 5.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.5 1.8-.8.9-1.4 2.3-1.3 3.7 1.4.1 2.8-.7 3.6-1.7z"/></svg><span class="lbl"><small>App Store</small><strong>Muy pronto</strong></span></span></div>
+  <p class="fine">Android 8.0 o posterior · Empieza gratis</p>
+</div>
+<div class="strip" aria-label="Fotos reveladas con EJECT"><img src="../img/eject-b/01.jpg" alt="" width="720" height="900" loading="eager"><img src="../img/eject-b/02.jpg" alt="" width="720" height="900" loading="eager"><img src="../img/eject-b/04.jpg" alt="" width="720" height="900" loading="lazy"><img src="../img/eject-b/06.jpg" alt="" width="720" height="900" loading="lazy"><img src="../img/eject-b/08.jpg" alt="" width="720" height="900" loading="lazy"></div>
+<h2>No eliges filtros. <em>Cada carrete es al azar.</em></h2>
+<p>Carrete cálido, carrete frío de interior, tungsteno, blanco y negro, con fugas de luz, grano, destellos de estrella, prisma, ojo de pez, VHS y, de vez en cuando, doble exposición. La misma foto nunca sale igual dos veces.</p>
+<ul class="looks"><li>Carrete cálido</li><li>Carrete frío de interior</li><li>Tungsteno</li><li>Blanco y negro</li><li>Fugas de luz</li><li>Grano</li><li>Destellos de estrella</li><li>Prisma</li><li>Ojo de pez</li><li>VHS</li><li>Doble exposición</li></ul>
+<h2>¿No te convence? <em>Otra vez, cuando quieras.</em></h2>
+<p>Gira el anillo para blanco y negro. ¿No ha salido? Saca el carrete otra vez. De vez en cuando sale una foto estropeada. El carrete es así.</p>
+<div class="three">
+  <div><b>Hasta 2000 fotos</b><p>Un viaje, un año, un toque.</p></div>
+  <div><b>3 carretes gratis</b><p>Sin registro. Empieza ya.</p></div>
+  <div><b>Sin anuncios. Se queda en tu móvil</b><p>Las fotos solo salen cuando tú las compartes.</p></div>
+</div>
+<p class="by">Hecha en Oporto por un fotógrafo harto de retocar una a una.</p>
+<div class="end"><p class="h">Mételas todas. <em>Listo.</em></p><div class="stores"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.eject" rel="noopener"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small>Disponible en</small><strong>Google Play</strong></span></a></div><p class="fine">iPhone muy pronto</p></div>
+<p class="links"><a href="support/">Soporte</a> · <a href="privacy/">Política de privacidad</a> · <a href="https://www.youtube.com/watch?v=JAmOI3M1YZo">Ver 15 segundos</a> · <a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a></p>
+</section>
 </main>
 <footer class="wrap foot">
-<p><a href="support/"><span class="en">Support</span><span class="ko">지원</span><span class="ja">サポート</span><span class="pt">Suporte</span></a> · <a href="privacy/"><span class="en">Privacy</span><span class="ko">개인정보</span><span class="ja">プライバシー</span><span class="pt">Privacidade</span></a></p>
+<p><a href="support/"><span class="en">Support</span><span class="ko">지원</span><span class="ja">サポート</span><span class="pt">Suporte</span><span class="es">Soporte</span></a> · <a href="privacy/"><span class="en">Privacy</span><span class="ko">개인정보</span><span class="ja">プライバシー</span><span class="pt">Privacidade</span><span class="es">Privacidad</span></a></p>
 <p>© 2026 <a href="../">Gatinho Reguila</a>, Unipessoal Lda · Porto, Portugal</p>
 </footer>
-<div class="dock" id="dock"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.eject" rel="noopener"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small><span class="en">Get it on</span><span class="ko">다운로드</span><span class="ja">ダウンロード</span><span class="pt">Disponível no</span></small><strong>Google Play</strong></span></a></div>
+<div class="dock" id="dock"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.eject" rel="noopener"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small><span class="en">Get it on</span><span class="ko">다운로드</span><span class="ja">ダウンロード</span><span class="pt">Disponível no</span><span class="es">Disponible en</span></small><strong>Google Play</strong></span></a></div>
 <script>
 (function(){var r=document.documentElement,K="grgs.lang";
 function set(l){r.setAttribute("data-lang",l);r.lang=l==="pt"?"pt-PT":l;document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.lang===l))});
- try{if(l==="ja"){localStorage.setItem("grgs.lang.ja","1");localStorage.setItem(K,"en")}else{localStorage.removeItem("grgs.lang.ja");localStorage.setItem(K,l)}}catch(e){}}
+ try{if(l==="ja"||l==="es"){localStorage.setItem("grgs.lang.x",l);localStorage.setItem(K,"en")}else{localStorage.removeItem("grgs.lang.x");localStorage.setItem(K,l)}}catch(e){}}
 var s=r.getAttribute("data-lang")||"en";set(s);
 document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.lang)})});
 var d=document.getElementById("dock"),h=document.querySelector(".hero");
