@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="en" data-lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gatinho Reguila</title>
 <meta name="description" content="Gatinho Reguila — small apps and games from Porto. Small cat, big mischief.">
-<meta name="theme-color" content="#f7f9fc">
+<meta name="theme-color" content="#F3F1ED">
 <meta property="og:title" content="Gatinho Reguila">
 <meta property="og:description" content="Small games and apps from Porto.">
 <meta property="og:image" content="https://gatinhoreguila.com/og.png">
@@ -16,8 +16,9 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Fredoka:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="theme-b.css">
 <script>try{var l=localStorage.getItem("grgs.lang");if(l==="ko"||l==="pt")document.documentElement.setAttribute("data-lang",l)}catch(e){}</script>
 </head>
 <body>
@@ -25,7 +26,7 @@
   <div class="wrap flex h-14 items-center justify-between gap-3">
     <a href="./" class="flex min-w-0 items-center gap-2.5 no-underline">
       <img src="icon.png" alt="" width="28" height="28" class="pix h-7 w-7 rounded-sm">
-      <span class="truncate font-pixel text-[15px] font-bold tracking-wide">GATINHO REGUILA</span>
+      <span class="truncate font-pixel text-[16px]">Gatinho Reguila</span>
     </a>
     <div class="flex items-center gap-2">
       <nav class="hidden items-center gap-1 text-sm lg:flex" aria-label="sections">
@@ -50,7 +51,7 @@
           <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
           <span class="en">Independent studio · Porto, Portugal</span><span class="ko">독립 스튜디오 · 포르투갈 포르투</span><span class="pt">Estúdio independente · Porto, Portugal</span>
         </span>
-        <h1 class="mt-5 font-pixel text-[2.6rem] font-bold leading-[1.05] sm:text-6xl"><span class="en">Small cat.<br>Big mischief.</span><span class="ko">작은 고양이.<br>큰 장난.</span><span class="pt">Gato pequeno.<br>Grande travessura.</span></h1>
+        <h1 class="mt-5 font-pixel text-[2.6rem] font-bold leading-[1.05] sm:text-6xl"><span class="en">Small cat.<br>Big <em>mischief.</em></span><span class="ko">작은 고양이.<br>큰 <em>장난.</em></span><span class="pt">Gato pequeno.<br>Grande <em>travessura.</em></span></h1>
         <p class="mt-5 max-w-[34rem] text-base leading-relaxed text-muted-foreground sm:text-lg">
           <span class="en">We make apps and games that are calm to use and a little bit cheeky. Film photo books from your camera roll, a farm that grows with your savings, a tower full of questions.</span>
           <span class="ko">쓰기 편하고 조금은 장난스러운 앱과 게임을 만들어요. 카메라 롤로 만드는 필름 사진집, 모으는 만큼 자라는 농장, 문제로 가득한 탑.</span>
@@ -65,7 +66,7 @@
         <div class="azulejo aspect-square w-full max-w-[26rem] rounded-lg border border-border md:ml-auto"></div>
         <div class="absolute inset-0 flex items-center justify-center md:justify-end md:pr-[4.5rem]">
           <div class="rounded-lg border border-border bg-card p-6 shadow-sm">
-            <span class="pixcat text-primary" data-pixcat="132"></span>
+            <img class="pix" src="img/ggobi-sit.png" alt="Ggobi" width="126" height="133" style="image-rendering:pixelated;display:block">
           </div>
         </div>
       </div>
@@ -90,12 +91,12 @@
       <div id="cards" class="mt-8 grid gap-4 sm:grid-cols-2">
         <article data-k="app" class="card sm:col-span-2">
           <div class="flex items-start justify-between gap-3">
-            <span class="ic"><img data-ic="film" alt=""></span>
+            <span class="ic ic-eject"><img src="eject/icon.png" alt="" width="44" height="44"></span>
             <span class="badge-outline"><span class="en">Android first</span><span class="ko">안드로이드 먼저</span><span class="pt">Primeiro no Android</span></span>
           </div>
-          <h3 class="mt-5 text-lg font-semibold">EJECT <span class="font-normal text-muted-foreground">Film</span></h3>
-          <p class="mt-2 max-w-[40rem] text-sm leading-relaxed text-muted-foreground"><span class="en">Throw in your photos, as many as you like, and get back a film photo book: film colour, grain, light leaks, contact sheets. Different every time.</span><span class="ko">사진을 왕창 넣으면 필름 사진집이 나와요. 필름 색감, 그레인, 빛샘, 밀착 인화까지. 넣을 때마다 달라요.</span><span class="pt">Junte as fotos que quiser e receba um fotolivro de película: cor de película, grão, fugas de luz e folhas de contacto. Sempre diferente.</span></p>
-  <div class="strip mt-5" aria-label="EJECT sample pages"><img src="img/eject-1.jpg" alt="Film frame of Porto buildings" width="480" height="600" loading="lazy"><img src="img/eject-2.jpg" alt="Porto rooftops printed with a handwritten line" width="480" height="600" loading="lazy"><img src="img/eject-3.jpg" alt="Kitten in cyanotype blue" width="480" height="600" loading="lazy"><img src="img/eject-4.jpg" alt="Black and white dogs on a walk" width="480" height="600" loading="lazy"></div>
+          <h3 class="mt-5 text-lg font-semibold">EJECT <span class="font-normal text-muted-foreground">Film Camera</span></h3>
+          <p class="mt-2 max-w-[40rem] text-sm leading-relaxed text-muted-foreground"><span class="en">Tired of editing photos one by one? Throw them all in. Random film looks, done.</span><span class="ko">사진 하나하나 보정하기 귀찮으셨죠? 왕창 넣으면 끝. 필터는 매번 랜덤, 필름롤은 알아서.</span><span class="pt">Farto de editar fotos uma a uma? Atira-as todas. Filtros ao acaso, rolo sozinho.</span></p>
+  <div class="strip mt-5" aria-label="EJECT sample pages"><img src="img/eject-1.jpg" alt="" width="480" height="600" loading="lazy"><img src="img/eject-b/01.jpg" alt="" width="480" height="600" loading="lazy"><img src="img/eject-2.jpg" alt="" width="480" height="600" loading="lazy"><img src="img/eject-b/07b.jpg" alt="" width="480" height="600" loading="lazy"><img src="img/eject-3.jpg" alt="" width="480" height="600" loading="lazy"><img src="img/eject-b/02.jpg" alt="" width="480" height="600" loading="lazy"><img src="img/eject-4.jpg" alt="" width="480" height="600" loading="lazy"><img src="img/eject-b/08.jpg" alt="" width="480" height="600" loading="lazy"></div>
           <div class="mt-4 flex flex-wrap items-center gap-2">
             <span class="badge-live"><span class="en">Out on Android</span><span class="ko">안드로이드 출시</span><span class="pt">Já no Android</span></span>
             <span class="badge-soft"><span class="en">iPhone soon</span><span class="ko">아이폰은 곧</span><span class="pt">iPhone em breve</span></span>

@@ -1,0 +1,30 @@
+/* GRGS 안 B 테마: 미색 바탕, 주아·Fredoka, 호박색 강조 (styles.css 뒤에 읽힘) */
+:root,:root:not([data-theme=light]),:root[data-theme=dark]{
+  --background:40 19% 94%;--foreground:20 10% 12%;--card:0 0% 100%;--card-foreground:20 10% 12%;
+  --primary:34 91% 45%;--primary-foreground:0 0% 100%;--secondary:38 19% 88%;--secondary-foreground:20 10% 18%;
+  --muted:38 20% 91%;--muted-foreground:30 5% 45%;--accent:36 60% 90%;--accent-foreground:34 91% 32%;
+  --border:36 16% 84%;--input:36 16% 84%;--ring:34 91% 45%;--tile:34 91% 45%;--icbg:36 60% 92%;--radius:.75rem;color-scheme:light}
+html{background:hsl(var(--background))}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Apple SD Gothic Neo","Noto Sans KR",Arial,sans-serif}
+.font-pixel,h1,h2,h3{font-family:Fredoka,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-weight:600;letter-spacing:0}
+html[data-lang=ko] .font-pixel,html[data-lang=ko] h1,html[data-lang=ko] h2,html[data-lang=ko] h3{font-family:Jua,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-weight:400}
+.font-pixel{letter-spacing:.06em}
+h1 em,h2 em{font-style:normal;color:hsl(var(--primary))}
+.eyebrow,.font-mono{font-family:Fredoka,-apple-system,sans-serif;letter-spacing:.08em;font-weight:500}
+.eyebrow{color:hsl(var(--primary))}
+.pix{image-rendering:auto}
+.card{border-radius:var(--radius);box-shadow:0 1px 0 rgba(34,30,28,.03)}
+.btn-primary{height:3rem;border-radius:.75rem;font-weight:600;font-size:.95rem;box-shadow:0 4px 14px rgba(222,128,10,.22)}
+.btn-outline{height:3rem;border-radius:.75rem;font-weight:500}
+.badge-live{background:hsl(var(--primary)/.14);color:hsl(34 91% 34%)}
+.badge-outline{border-color:hsl(var(--border));color:hsl(var(--muted-foreground))}
+.ic{border-radius:.75rem}
+.azulejo{border-radius:1rem;border-color:hsl(var(--border))}
+.navlink:hover,.btn-outline:hover{background:hsl(var(--accent))}
+.lang,[role=tablist]{background:#E7E3DC;border-radius:.6rem}
+.seg,.tab{border-radius:.45rem}
+footer .font-mono{letter-spacing:.02em}
+.ic-eject{background:transparent}.ic-eject img{width:44px;height:44px;border-radius:.75rem;image-rendering:auto}
+.strip{max-width:none;grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (min-width:640px){.strip{grid-template-columns:repeat(8,minmax(0,1fr))}}
+.strip img{border-radius:.5rem}
