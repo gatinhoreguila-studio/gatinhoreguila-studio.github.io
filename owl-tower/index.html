@@ -1,133 +1,173 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="en" data-lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
-<meta name="theme-color" content="#F3F1ED">
-<link rel="icon" type="image/png" href="../icon.png">
-<title>Owl Tower — Stock Action Quiz</title>
-<meta name="description" content="Owl Tower: a pixel kung-fu quiz about money. One minute a round, 96 floors. No ads, no subscription. Android coming soon.">
+<meta name="theme-color" content="#15132E">
+<link rel="icon" type="image/png" href="icon.png">
+<title>Owl Tower: Stock Action Quiz · 부엉 무림탑</title>
+<meta name="description" content="Owl Tower: a 96-floor pixel kung fu quiz about stocks, saving and everyday money. One minute a round. Answer right and the master goes flying. Out now on Android; iPhone in the works.">
+<meta property="og:title" content="Owl Tower: Stock Action Quiz">
+<meta property="og:description" content="One minute a round. Answer right and the master goes flying. Out now on Google Play.">
+<meta property="og:image" content="https://gatinhoreguila.com/owl-tower/hero-en.png">
+<meta property="og:url" content="https://gatinhoreguila.com/owl-tower/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Fredoka:wght@400;500;600&display=swap">
-<script>try{var l=localStorage.getItem("grgs.lang");if(l==="ko"||l==="pt")document.documentElement.setAttribute("data-lang",l)}catch(e){}</script>
+<script>(function(){try{var r=document.documentElement,l=localStorage.getItem("grgs.lang");if(!l){var n=(navigator.language||"").toLowerCase();l=n.indexOf("ko")===0?"ko":n.indexOf("pt")===0?"pt":"en"}if(l==="ko"||l==="pt")r.setAttribute("data-lang",l)}catch(e){}})();</script>
 <style>
-:root{--paper:#F3F1ED;--ink:#221E1C;--soft:#78726C;--line:#DDD8D0;--card:#FFFFFF;--sec:#E7E3DC;--pri:#DE800A;--prifg:#FFFFFF;color-scheme:light}
+:root{--paper:#F3F1ED;--ink:#221E1C;--soft:#78726C;--line:#DDD8D0;--card:#FFFFFF;--sec:#E7E3DC;--pri:#C8841A;--prifg:#FFFFFF;--navy:#15132E;--navy2:#100E26;--gold:#F2B544;--cream:#F6EEDC;--red:#E0503F;color-scheme:light}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:3px}
-.bar{position:sticky;top:0;z-index:2;background:var(--paper);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.bar-in{max-width:680px;margin:0 auto;padding:10px max(16px,env(safe-area-inset-right)) 10px max(16px,env(safe-area-inset-left));display:flex;align-items:center;justify-content:space-between;gap:10px}
-.crumb{display:flex;align-items:center;gap:8px;min-width:0;font-size:14px;white-space:nowrap}.crumb .home{color:var(--soft);text-decoration:none}.crumb .home:hover{color:var(--ink)}.crumb .sep{color:var(--line)}.mark{font-weight:600;letter-spacing:.18em;text-decoration:none}
-.lang{display:inline-flex;gap:12px;margin-left:auto;font-size:14px}.lang button{appearance:none;background:none;border:0;padding:0;font:inherit;color:var(--soft);cursor:pointer;border-bottom:1px solid transparent;line-height:1.4}.lang button[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}.lang button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-main>section[lang]{display:none;border-bottom:0}html[data-lang="en"] main>section[lang="en"],html[data-lang="ko"] main>section[lang="ko"],html[data-lang="pt"] main>section[lang="pt-PT"]{display:block}
-.en,.ko,.pt{display:none}html[data-lang="en"] .en,html[data-lang="ko"] .ko,html[data-lang="pt"] .pt{display:inline}
-.wrap{max-width:680px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left))}
-section{padding:36px 0 44px;border-bottom:1px solid var(--line);scroll-margin-top:58px}
-h1{font-family:Fredoka,"Apple SD Gothic Neo",sans-serif;font-size:30px;line-height:1.2;font-weight:600;letter-spacing:0;margin:0 0 6px}
-h2{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:34px 0 8px}
-h3{font-size:17px;font-weight:600;margin:28px 0 6px}
-p,ul{margin:0 0 14px}
-ul{padding-left:1.2em}
-li{margin:3px 0}
-.tag{font-size:20px;margin:0 0 18px}
-.lead{font-size:18px}
-.short{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:18px 0 6px;background:transparent}
-.meta,.date,.links{font-size:14px;color:var(--soft)}
-.links a{color:var(--soft)}
-.hero{text-align:center;padding:40px 0 4px}
-.hero svg{display:block;margin:0 auto 14px;width:220px;max-width:70%;height:auto}
-.hero .name{font-family:Fredoka,"Apple SD Gothic Neo",sans-serif;font-size:34px;font-weight:600;letter-spacing:.3em;margin:0;padding-left:.32em}
-[lang=ko]{word-break:keep-all;overflow-wrap:break-word}
-[lang=ko] h2{letter-spacing:.04em}
-.foot{padding-top:24px;padding-bottom:calc(40px + env(safe-area-inset-bottom));font-size:13px;color:var(--soft)}
-.foot p{margin:0 0 6px}
-.foot a{color:var(--soft)}
-
-/* GRGS shadcn 테마 (코발트) */
-.bar{background:color-mix(in srgb,var(--paper) 90%,transparent)}
-.bar-in{max-width:760px;min-height:56px;padding-top:6px;padding-bottom:6px}
-.crumb .home{display:inline-flex;align-items:center;gap:8px;font-family:Fredoka,"Apple SD Gothic Neo",sans-serif;font-weight:600;letter-spacing:.04em;color:var(--ink);font-size:16px}
+.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 90%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:760px;min-height:56px;margin:0 auto;padding:6px max(16px,env(safe-area-inset-right)) 6px max(16px,env(safe-area-inset-left));display:flex;align-items:center;justify-content:space-between;gap:10px}
+.crumb{display:flex;align-items:center;gap:8px;min-width:0;font-size:14px;white-space:nowrap}.crumb .sep{color:var(--line)}
+.crumb .home{display:inline-flex;align-items:center;gap:8px;font-family:Fredoka,"Apple SD Gothic Neo",sans-serif;font-weight:600;letter-spacing:.04em;color:var(--ink);font-size:16px;text-decoration:none}
 .crumb .home::before{content:"";width:24px;height:24px;flex:none;background:url(/icon.png) center/contain no-repeat;image-rendering:pixelated;border-radius:2px}
-.crumb .mark{font-family:Fredoka,"Apple SD Gothic Neo",sans-serif;font-weight:500;letter-spacing:.08em;color:var(--soft)}
-.lang{gap:2px;padding:4px;background:var(--sec);border-radius:6px;font-size:13px}
-.lang button{height:36px;padding:0 12px;border:0!important;border-radius:4px;font-weight:500;color:var(--soft)}
-.lang button[aria-pressed="true"]{background:var(--paper);color:var(--ink);box-shadow:0 1px 2px rgba(34,30,28,.08)}
-.wrap{max-width:760px}
-h1{font-family:Fredoka,"Apple SD Gothic Neo",sans-serif;font-weight:600;letter-spacing:0;line-height:1.1}
-[lang=ko] h1{font-family:Jua,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-weight:400}
-h2{font-family:Fredoka,"Apple SD Gothic Neo",sans-serif;font-weight:600;font-size:15px;letter-spacing:.08em;color:var(--pri)}[lang=ko] h2{font-family:Jua,"Apple SD Gothic Neo",sans-serif;font-weight:400;letter-spacing:.02em;font-size:17px;text-transform:none}
-main a{color:var(--pri);text-decoration-color:color-mix(in srgb,var(--pri) 40%,transparent)}
-.short{background:var(--card);border-radius:6px;border-color:var(--line)}
-.kv{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px 18px}
-.hero .name{font-family:Fredoka,"Apple SD Gothic Neo",sans-serif;font-weight:700;letter-spacing:.18em}
-.hero svg{color:var(--pri)}
-.foot a{text-decoration-color:var(--line)}
-.lang{flex:none}.lang button{white-space:nowrap}
+.crumb .mark{display:inline-flex;align-items:center;gap:7px;font-family:Fredoka,"Apple SD Gothic Neo",sans-serif;font-weight:500;letter-spacing:.06em;color:var(--soft)}.crumb .mark img{width:22px;height:22px;border-radius:6px}
 @media (max-width:480px){.crumb .home{font-size:0;gap:0}}
-.hero .owl{display:block;margin:0 auto 12px;image-rendering:pixelated}
-.soon{margin:26px 0 18px}.pill{display:inline-block;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--soft);background:var(--card)}.play{display:inline-block;padding:12px 22px;border-radius:12px;background:#141210;color:#fff!important;text-decoration:none;font-weight:600;font-family:Fredoka,sans-serif}
+.lang{display:inline-flex;flex:none;gap:2px;margin-left:auto;padding:4px;background:var(--sec);border-radius:6px;font-size:13px}.lang button{appearance:none;background:none;border:0;height:36px;padding:0 12px;border-radius:4px;font:inherit;font-weight:500;color:var(--soft);cursor:pointer;white-space:nowrap}.lang button[aria-pressed="true"]{background:var(--paper);color:var(--ink);box-shadow:0 1px 2px rgba(34,30,28,.08)}.lang button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+main>section[lang]{display:none}html[data-lang="en"] main>section[lang="en"],html[data-lang="ko"] main>section[lang="ko"],html[data-lang="pt"] main>section[lang="pt-PT"]{display:block}
+.en,.ko,.pt{display:none}html[data-lang="en"] .en,html[data-lang="ko"] .ko,html[data-lang="pt"] .pt{display:inline}
+.wrap{max-width:760px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left))}
+[lang=ko]{word-break:keep-all;overflow-wrap:break-word}
+
+/* 밤하늘 */
+.sky{background-color:var(--navy);background-image:radial-gradient(circle at 18% 22%,rgba(255,255,255,.9) 0 1px,transparent 1.6px),radial-gradient(circle at 73% 14%,rgba(255,255,255,.8) 0 1px,transparent 1.6px),radial-gradient(circle at 88% 58%,rgba(242,181,68,.9) 0 1px,transparent 1.8px),radial-gradient(circle at 36% 74%,rgba(255,255,255,.6) 0 1px,transparent 1.5px),radial-gradient(circle at 58% 42%,rgba(255,255,255,.5) 0 1px,transparent 1.4px),radial-gradient(circle at 9% 86%,rgba(242,181,68,.7) 0 1px,transparent 1.6px),radial-gradient(ellipse at 50% 120%,var(--navy2),transparent 60%);color:var(--cream);border-bottom:3px solid var(--gold)}
+.hero{text-align:center;padding:22px 16px 30px}
+.hero .art{display:block;width:100%;max-width:640px;height:auto;margin:0 auto 10px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+h1{font-family:Fredoka,"Apple SD Gothic Neo",sans-serif;font-weight:600;font-size:clamp(28px,6.6vw,44px);line-height:1.15;margin:4px 0 10px;color:#fff;letter-spacing:0}
+[lang=ko] h1,[lang=ko] .big{font-family:Jua,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-weight:400}
+h1 em,.big em{font-style:normal;color:var(--gold)}
+.hero .sub{max-width:560px;margin:0 auto 6px;font-size:17px;color:#D9D3E6}
+.stores{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;margin:24px 0 10px}
+.play{display:inline-flex;align-items:center;gap:12px;height:64px;padding:0 22px 0 16px;border-radius:12px;background:#0B0A14;color:#fff!important;text-decoration:none;border:1px solid #4B4770;box-shadow:0 8px 22px rgba(0,0,0,.35);transition:transform .12s}
+.play:hover{transform:translateY(-1px)}.play svg{width:30px;height:32px;flex:none}
+.play .lbl,.apple .lbl{display:flex;flex-direction:column;align-items:flex-start;line-height:1.05;text-align:left}
+.play small,.apple small{font-size:11px;letter-spacing:.02em;opacity:.8}.play strong,.apple strong{font-family:Fredoka,"Apple SD Gothic Neo",sans-serif;font-size:21px;font-weight:600;letter-spacing:.01em}
+.apple{display:inline-flex;align-items:center;gap:10px;height:64px;padding:0 20px 0 16px;border-radius:12px;border:1.5px dashed #6A6590;color:#B9B3CC}.apple svg{width:24px;height:28px;flex:none;fill:currentColor}
+.hero .fine{font-size:13px;color:#A9A3BE;margin:0}
+/* 종이 본문 */
+h2{font-family:Fredoka,"Apple SD Gothic Neo",sans-serif;font-weight:600;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--pri);margin:38px 0 12px}
+[lang=ko] h2{font-family:Jua,"Apple SD Gothic Neo",sans-serif;font-weight:400;letter-spacing:.02em;font-size:19px;text-transform:none}
+p,ul,ol{margin:0 0 14px}
+.strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 14px;margin:0 -16px;padding-left:16px;padding-right:16px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.strip img,.strip video{flex:none;width:min(62vw,216px);height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:14px;scroll-snap-align:start;background:var(--navy);box-shadow:0 4px 14px rgba(34,30,28,.12)}
+.strip .vid{position:relative;flex:none;scroll-snap-align:start}.strip .vid video{display:block;width:min(62vw,216px)}
+.vtag{position:absolute;left:10px;bottom:10px;font-size:12px;font-weight:600;padding:4px 9px;border-radius:999px;background:rgba(11,10,20,.72);color:var(--gold);font-family:Fredoka,"Apple SD Gothic Neo",sans-serif}
+@media (min-width:700px){.strip img,.strip video,.strip .vid video{width:200px}}
+.steps{list-style:none;padding:0;display:grid;gap:12px}
+@media (min-width:640px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 10px;position:relative}
+.steps .n{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:999px;background:var(--navy);color:var(--gold);font-family:Fredoka,sans-serif;font-weight:600;font-size:15px;margin-bottom:10px}
+.steps b{display:block;font-size:19px;line-height:1.3;margin-bottom:6px}[lang=ko] .steps b{font-family:Jua,"Apple SD Gothic Neo",sans-serif;font-weight:400;font-size:21px}
+.steps p{font-size:15px;color:var(--soft);margin:0 0 8px}
+.list{padding-left:1.15em}.list li{margin:7px 0}.list b{color:var(--ink)}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px 6px}.box .easy{color:var(--soft);font-size:15px}
+.know{font-size:15px;color:var(--soft)}
+.end{text-align:center;margin:56px 0 36px;padding:36px 16px 30px;border-radius:18px;background:var(--navy);color:var(--cream)}
+.end .big{font-family:Fredoka,"Apple SD Gothic Neo",sans-serif;font-weight:600;font-size:clamp(26px,6vw,38px);line-height:1.15;margin:0 0 8px;color:#fff}
+.end .sub{color:#D9D3E6;margin:0}
+.links,.meta{font-size:14px;color:var(--soft)}.links a{color:var(--pri);text-decoration-color:color-mix(in srgb,var(--pri) 40%,transparent)}
+.foot{padding-top:24px;padding-bottom:calc(40px + env(safe-area-inset-bottom));font-size:13px;color:var(--soft)}.foot p{margin:0 0 6px}.foot a{color:var(--soft);text-decoration-color:var(--line)}
+/* 폰 아래 고정 단추 */
+.dock{display:none}
+@media (max-width:640px){.dock{display:block;position:fixed;left:0;right:0;bottom:0;z-index:6;padding:10px max(14px,env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left));background:color-mix(in srgb,var(--paper) 94%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s}.dock.on{transform:none}.dock .play{height:54px;width:100%;max-width:420px;margin:0 auto;justify-content:center;box-shadow:none;border:0}.foot{padding-bottom:calc(96px + env(safe-area-inset-bottom))}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.dock{transition:none}}
 </style>
 </head>
 <body>
-<header class="bar"><div class="bar-in"><div class="crumb"><a class="home" href="../">Gatinho Reguila</a><span class="sep" aria-hidden="true">/</span><span class="mark">Owl Tower</span></div><nav class="lang" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ko" aria-pressed="false">한국어</button><button type="button" data-lang="pt" aria-pressed="false">PT</button></nav></div></header>
-<main class="wrap">
-<div class="hero"><img class="owl" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAPCAYAAADUFP50AAAA2UlEQVR42qWSoQ7CMBCGv5EpHmFBE1ISgi5mwWKmkBPIGXgVHIIgFhQKg10wTBMIE2AQBIVEUwQUxljJEn7Tu+/uvza5wr+SwlFSOKpovZQuem6TPLMUjvLc5gezs03PBpXDvo16oj9cAOADYb/ziJ8MgAdTcXK2StlJjWqLIuzjqeXtgc1+BUAgjwDcUsxoHI0HrziQ38xo7Pb8V3zRrPauzyYhuesAaJ92FGE2QJycLb2CKHWrVlSpM5uEzJdr3YuVXfSv36VNubpOhbpOhTLlRlP6NLG/dAfEQFd2T4hCmQAAAABJRU5ErkJggg==" alt="" width="112" height="120"><p class="name">OWL TOWER</p></div>
-<section id="en" lang="en"><h1>Stock Action Quiz</h1>
-<p class="tag">One minute a round. Answer right and the master goes flying.</p>
-<p class="lead">Owl Tower is a pixel kung-fu quiz about money. Climb 96 floors, one quick round at a time, and learn how stocks, saving and taxes actually work along the way.</p>
+<header class="bar"><div class="bar-in"><div class="crumb"><a class="home" href="../">Gatinho Reguila</a><span class="sep" aria-hidden="true">/</span><span class="mark"><img src="icon.png" alt="" width="22" height="22">Owl Tower</span></div><nav class="lang" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ko" aria-pressed="false">한국어</button><button type="button" data-lang="pt" aria-pressed="false">PT</button></nav></div></header>
+<main>
+<section id="en" lang="en">
+<div class="sky"><div class="wrap hero">
+<img class="art" src="hero-en.png" width="1024" height="500" alt="Owl Tower: Stock Action Quiz. One minute a round, answer right and the master goes flying." loading="eager" fetchpriority="high">
+<h1>Answer right, <em>send the master flying.</em></h1>
+<p class="sub">A 96-floor pixel kung fu quiz about stocks, saving and everyday money. One minute a round.</p>
+<div class="stores"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.owltower" rel="noopener"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small>Get it on</small><strong>Google Play</strong></span></a><span class="apple" aria-disabled="true"><svg viewBox="0 0 24 28" aria-hidden="true"><path d="M19.6 14.9c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.7 1.1-4.6 1.1-1 0-2.4-1.1-4-1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.1 1.5 12.1 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 3.9-1s2.4 1 4 .9c1.7 0 2.7-1.5 3.7-3 1.2-1.7 1.6-3.3 1.7-3.4-.1 0-3.2-1.2-3.2-4.7zM16.6 5.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.5 1.8-.8.9-1.4 2.3-1.3 3.7 1.4.1 2.8-.7 3.6-1.7z"/></svg><span class="lbl"><small>App Store</small><strong>Coming soon</strong></span></span></div>
+<p class="fine">Free to start · Full Pass is one purchase · No ads, no subscription</p>
+</div></div>
+<div class="wrap">
+<h2>Right out of the game</h2>
+<div class="strip" tabindex="0"><div class="vid"><video src="promo-en.mp4" poster="poster-en.jpg" width="360" height="640" muted autoplay loop playsinline preload="metadata" aria-label="Watch 15 s"></video><span class="vtag">Watch 15 s</span></div><img src="../img/owl/en/01.jpg" width="540" height="960" alt="" loading="eager" decoding="async"><img src="../img/owl/en/02.jpg" width="540" height="960" alt="" loading="eager" decoding="async"><img src="../img/owl/en/03.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/en/04.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/en/05.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/en/06.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/en/07.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/en/08.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"></div>
 <h2>How it plays</h2>
-<p>Each floor is one question and one minute. Get it right and the master on that floor goes flying. Miss, and you try again. Earn feathers, dress up your owl, and keep the certificate when you clear a tower.</p>
-<h2>Your own numbers</h2>
-<p>Put in your own salary or savings and the game makes questions out of them. Those numbers stay on your phone; we never see them.</p>
-<h2>No ads, no subscription</h2>
-<p>The first floors are free. The Full Pass is a single one-time purchase through Google Play that opens every tower, forever. Nothing else to buy, nothing to renew.</p>
-<h2>Not financial advice</h2>
-<p>Owl Tower is a financial education game. Nothing in it tells you to buy or sell any stock or product. Questions are written as of November 2026.</p>
-<p class="soon" data-soon><span class="pill">Android coming soon</span></p>
-<!-- 공개 날: 위 줄을 <p class="soon"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.owltower">Google Play</a></p> 로 -->
+<ol class="steps"><li><span class="n">1</span><b>One question, one minute.</b><p>Stocks, ETFs, compounding, taxes, phone scams. Plain words, four choices.</p></li><li><span class="n">2</span><b>Right? Palm blast.</b><p>Your chi charges up and the master on that floor goes flying. Very satisfying.</p></li><li><span class="n">3</span><b>Wrong? One hit, one lesson.</b><p>Nobody scolds you. The master lands a hit and tells you why, in plain words. Then you try again.</p></li></ol>
+<h2>What's inside</h2>
+<ul class="list"><li><b>96 floors, 96 masters.</b> Kung Fu Mountain, Foggy Harbor, Sale City, Jackpot Street.</li><li><b>2,400+ questions.</b> Stocks, ETFs, compounding, inflation, taxes, spending, investor psychology.</li><li><b>Shady cases too.</b> "Guaranteed returns," hot-tip chat rooms, phone scams. You spot them faster once you've seen how they work.</li><li><b>Concept cards.</b> Every right answer becomes a card. Your training journal fills up. No gacha.</li><li><b>Your own numbers.</b> Type in your paycheck or savings and get questions built around you. The numbers never leave your phone.</li><li><b>61 cosmetics.</b> Hats, outfits, a friend to ride on your head. Bought only with feathers you earn.</li></ul>
+<h2>Outside the tower</h2>
+<ul class="list"><li>Question of the Day: one a day, thirty seconds.</li><li>The Dojo: Endless Tower, Lightning Duel, Golden Ladder, Weekly Challenge, Shady Alley.</li><li>Finish a region, earn an in-game certificate. Share cards let you show off.</li></ul>
+<h2>Pay once</h2>
+<div class="box"><p>Kung Fu Mountain's 24 floors, the Question of the Day and share cards stay free. The <b>Full Pass</b> is a single purchase that opens the other 72 floors and the whole Dojo, for good. No ads, no subscription, feathers are never for sale.</p><p class="easy">Works offline. No account, no sign-in. Korean and English, switchable in Settings.</p></div>
+<h2>Good to know</h2>
+<p class="know">Owl Tower is a financial education game made for learning and fun. It is not financial advice and does not recommend buying or selling any stock or product. Rules, taxes and figures change, so check official sources before a real decision.</p>
+<div class="end"><p class="big">Ready to <em>climb?</em></p><p class="sub">Android is out now. iPhone is in the works.</p><div class="stores"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.owltower" rel="noopener"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small>Get it on</small><strong>Google Play</strong></span></a><span class="apple" aria-disabled="true"><svg viewBox="0 0 24 28" aria-hidden="true"><path d="M19.6 14.9c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.7 1.1-4.6 1.1-1 0-2.4-1.1-4-1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.1 1.5 12.1 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 3.9-1s2.4 1 4 .9c1.7 0 2.7-1.5 3.7-3 1.2-1.7 1.6-3.3 1.7-3.4-.1 0-3.2-1.2-3.2-4.7zM16.6 5.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.5 1.8-.8.9-1.4 2.3-1.3 3.7 1.4.1 2.8-.7 3.6-1.7z"/></svg><span class="lbl"><small>App Store</small><strong>Coming soon</strong></span></span></div></div>
 <p class="links"><a href="support/">Support</a> · <a href="privacy/">Privacy Policy</a> · <a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a></p>
 <p class="meta">Made in Porto by Gatinho Reguila.</p>
+</div>
 </section>
-<section id="ko" lang="ko"><h1>주식 액션 퀴즈</h1>
-<p class="tag">한 판 1분. 맞히면 사범님이 날아가요.</p>
-<p class="lead">부엉 무림탑은 돈 공부를 하는 도트 무협 퀴즈예요. 짧은 한 판씩 96층을 오르다 보면 주식, 저축, 세금이 실제로 어떻게 돌아가는지 알게 돼요.</p>
+<section id="ko" lang="ko">
+<div class="sky"><div class="wrap hero">
+<img class="art" src="hero-ko.png" width="1024" height="500" alt="부엉 무림탑: 주식 액션 퀴즈. 한 판 1분, 맞히면 사범님이 날아가요." loading="eager" fetchpriority="high">
+<h1>맞히면 <em>사범님이 날아가요.</em></h1>
+<p class="sub">주식·저축·돈 상식을 풀며 96층 탑을 오르는 도트 무협 퀴즈. 한 판 1분이면 돼요.</p>
+<div class="stores"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.owltower" rel="noopener"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small>다운로드</small><strong>Google Play</strong></span></a><span class="apple" aria-disabled="true"><svg viewBox="0 0 24 28" aria-hidden="true"><path d="M19.6 14.9c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.7 1.1-4.6 1.1-1 0-2.4-1.1-4-1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.1 1.5 12.1 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 3.9-1s2.4 1 4 .9c1.7 0 2.7-1.5 3.7-3 1.2-1.7 1.6-3.3 1.7-3.4-.1 0-3.2-1.2-3.2-4.7zM16.6 5.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.5 1.8-.8.9-1.4 2.3-1.3 3.7 1.4.1 2.8-.7 3.6-1.7z"/></svg><span class="lbl"><small>App Store</small><strong>준비 중</strong></span></span></div>
+<p class="fine">시작은 무료 · 전권은 한 번만 · 광고 없음, 구독 없음</p>
+</div></div>
+<div class="wrap">
+<h2>게임 화면 그대로</h2>
+<div class="strip" tabindex="0"><div class="vid"><video src="promo-ko.mp4" poster="poster-ko.jpg" width="360" height="640" muted autoplay loop playsinline preload="metadata" aria-label="15초 보기"></video><span class="vtag">15초 보기</span></div><img src="../img/owl/ko/01.jpg" width="540" height="960" alt="" loading="eager" decoding="async"><img src="../img/owl/ko/02.jpg" width="540" height="960" alt="" loading="eager" decoding="async"><img src="../img/owl/ko/03.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/ko/04.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/ko/05.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/ko/06.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/ko/07.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/ko/08.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"></div>
 <h2>이렇게 놀아요</h2>
-<p>한 층에 문제 하나, 1분. 맞히면 그 층 사범님이 날아가고, 틀리면 다시 도전해요. 깃털을 모아 부엉이를 꾸미고, 탑을 다 오르면 자격증이 남아요.</p>
-<h2>내 숫자로</h2>
-<p>내 월급이나 투자액을 넣으면 그 숫자로 문제를 만들어 줘요. 그 숫자는 내 폰 안에만 있고, 우리는 볼 수 없어요.</p>
-<h2>광고 없음, 구독 없음</h2>
-<p>처음 몇 층은 무료예요. 「전권」은 구글 플레이에서 한 번만 사면 모든 탑이 영원히 열려요. 더 살 것도, 갱신할 것도 없어요.</p>
-<h2>투자 권유 아님</h2>
-<p>부엉 무림탑은 금융 교육용 게임이에요. 어떤 종목이나 상품도 사고팔라고 하지 않아요. 문제는 2026년 11월 기준으로 썼어요.</p>
-<p class="soon" data-soon><span class="pill">안드로이드 곧 출시</span></p>
-<!-- 공개 날: 위 줄을 <p class="soon"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.owltower">Google Play</a></p> 로 -->
+<ol class="steps"><li><span class="n">1</span><b>문제 하나, 1분.</b><p>주식, ETF, 복리, 세금, 보이스피싱까지. 쉬운 말로 묻고 보기는 넷.</p></li><li><span class="n">2</span><b>맞히면 장풍.</b><p>기가 차오르고, 그 층 사범님이 날아가요. 이게 은근히 시원해요.</p></li><li><span class="n">3</span><b>틀리면 한 대, 그리고 한 수.</b><p>혼나지 않아요. 사범님이 한 대 치고 왜 틀렸는지 쉬운 말로 알려 줘요. 그리고 다시 도전.</p></li></ol>
+<h2>이런 게임이에요</h2>
+<ul class="list"><li><b>96층, 사범 96명.</b> 무림산에서 안개 항구, 세일 시티, 잭팟 거리까지.</li><li><b>문제 2,500개 넘게.</b> 주식, ETF, 복리, 물가, 세금, 소비, 투자 심리. 경제 상식이 저절로 쌓여요.</li><li><b>수상한 문제도 나와요.</b> "원금 보장", 리딩방, 보이스피싱을 사례로 풀어요. 사기는 아는 만큼 피해요.</li><li><b>개념 카드.</b> 맞힌 문제는 카드로 모이고, 수련 일지가 채워져요. 뽑기는 없어요.</li><li><b>내 숫자로.</b> 내 월급과 투자액을 넣으면 나만의 문제가 나와요. 숫자는 내 폰에만 있어요.</li><li><b>꾸미기 61가지.</b> 모자, 옷, 머리 위 친구. 게임에서 번 깃털로만 사요.</li></ul>
+<h2>탑 밖에도 할 게 있어요</h2>
+<ul class="list"><li>오늘의 한 문제: 하루에 하나, 30초.</li><li>수련장: 무한 탑, 번개 대결, 황금 사다리, 주간 도전, 수상한 뒷골목.</li><li>지역을 다 오르면 게임 속 자격증. 친구에게 자랑하는 공유 카드도 있어요.</li></ul>
+<h2>값은 한 번만</h2>
+<div class="box"><p>무림산 24층, 오늘의 한 문제, 공유 카드는 계속 무료예요. <b>「전권」</b>을 한 번 사면 나머지 72층과 수련장이 모두 열려요. 평생이에요. 광고 없음, 구독 없음, 깃털은 팔지 않아요.</p><p class="easy">인터넷 없이도 돼요. 가입도 로그인도 없어요. 한국어와 영어, 설정에서 바로 바꿔요.</p></div>
+<h2>알아 두세요</h2>
+<p class="know">공부와 재미를 위한 금융 교육용 게임이에요. 투자 권유가 아니고, 어떤 종목이나 상품을 사고팔라는 뜻도 없어요. 제도, 세금, 숫자는 바뀔 수 있으니 실제로 결정하기 전에는 공식 안내를 꼭 확인해 주세요.</p>
+<div class="end"><p class="big">이제 <em>올라가 볼까요?</em></p><p class="sub">안드로이드는 지금 바로. 아이폰은 준비하고 있어요.</p><div class="stores"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.owltower" rel="noopener"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small>다운로드</small><strong>Google Play</strong></span></a><span class="apple" aria-disabled="true"><svg viewBox="0 0 24 28" aria-hidden="true"><path d="M19.6 14.9c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.7 1.1-4.6 1.1-1 0-2.4-1.1-4-1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.1 1.5 12.1 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 3.9-1s2.4 1 4 .9c1.7 0 2.7-1.5 3.7-3 1.2-1.7 1.6-3.3 1.7-3.4-.1 0-3.2-1.2-3.2-4.7zM16.6 5.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.5 1.8-.8.9-1.4 2.3-1.3 3.7 1.4.1 2.8-.7 3.6-1.7z"/></svg><span class="lbl"><small>App Store</small><strong>준비 중</strong></span></span></div></div>
 <p class="links"><a href="support/">지원</a> · <a href="privacy/">개인정보 처리방침</a> · <a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a></p>
 <p class="meta">포르투에서 Gatinho Reguila가 만들어요.</p>
+</div>
 </section>
-<section id="pt" lang="pt-PT"><h1>Stock Action Quiz</h1>
-<p class="tag">Um minuto por ronda. Acerta e o mestre sai a voar.</p>
-<p class="lead">O Owl Tower é um quiz de kung fu em pixel sobre dinheiro. Sobe 96 andares, uma ronda rápida de cada vez, e aprende pelo caminho como funcionam mesmo as ações, a poupança e os impostos.</p>
+<section id="pt" lang="pt-PT">
+<div class="sky"><div class="wrap hero">
+<img class="art" src="hero-en.png" width="1024" height="500" alt="Owl Tower: Stock Action Quiz. Um minuto por ronda, acerta e o mestre sai a voar." loading="eager" fetchpriority="high">
+<h1>Acerta e <em>o mestre sai a voar.</em></h1>
+<p class="sub">Um quiz de kung fu em pixel, com 96 andares, sobre ações, poupança e dinheiro do dia a dia. Um minuto por ronda.</p>
+<div class="stores"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.owltower" rel="noopener"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small>Disponível no</small><strong>Google Play</strong></span></a><span class="apple" aria-disabled="true"><svg viewBox="0 0 24 28" aria-hidden="true"><path d="M19.6 14.9c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.7 1.1-4.6 1.1-1 0-2.4-1.1-4-1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.1 1.5 12.1 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 3.9-1s2.4 1 4 .9c1.7 0 2.7-1.5 3.7-3 1.2-1.7 1.6-3.3 1.7-3.4-.1 0-3.2-1.2-3.2-4.7zM16.6 5.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.5 1.8-.8.9-1.4 2.3-1.3 3.7 1.4.1 2.8-.7 3.6-1.7z"/></svg><span class="lbl"><small>App Store</small><strong>Em breve</strong></span></span></div>
+<p class="fine">Grátis para começar · Full Pass é uma só compra · Sem anúncios, sem subscrição</p>
+</div></div>
+<div class="wrap">
+<h2>Direto do jogo</h2>
+<div class="strip" tabindex="0"><div class="vid"><video src="promo-en.mp4" poster="poster-en.jpg" width="360" height="640" muted autoplay loop playsinline preload="metadata" aria-label="Ver 15 s"></video><span class="vtag">Ver 15 s</span></div><img src="../img/owl/en/01.jpg" width="540" height="960" alt="" loading="eager" decoding="async"><img src="../img/owl/en/02.jpg" width="540" height="960" alt="" loading="eager" decoding="async"><img src="../img/owl/en/03.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/en/04.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/en/05.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/en/06.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/en/07.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"><img src="../img/owl/en/08.jpg" width="540" height="960" alt="" loading="lazy" decoding="async"></div>
 <h2>Como se joga</h2>
-<p>Cada andar é uma pergunta e um minuto. Acerta e o mestre desse andar sai a voar. Falha e tentas outra vez. Ganha penas, veste a tua coruja e guarda o certificado quando terminares uma torre.</p>
-<h2>Os teus números</h2>
-<p>Introduz o teu salário ou as tuas poupanças e o jogo faz perguntas a partir deles. Esses números ficam no teu telemóvel; nunca os vemos.</p>
-<h2>Sem anúncios, sem subscrição</h2>
-<p>Os primeiros andares são grátis. O Full Pass é uma única compra no Google Play que abre todas as torres, para sempre. Nada mais para comprar, nada para renovar.</p>
-<h2>Não é aconselhamento financeiro</h2>
-<p>O Owl Tower é um jogo de educação financeira. Nada nele te diz para comprar ou vender qualquer ação ou produto. As perguntas referem-se a novembro de 2026.</p>
-<p class="soon" data-soon><span class="pill">Android em breve</span></p>
-<!-- 공개 날: 위 줄을 <p class="soon"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.owltower">Google Play</a></p> 로 -->
+<ol class="steps"><li><span class="n">1</span><b>Uma pergunta, um minuto.</b><p>Ações, ETFs, juros compostos, impostos, burlas telefónicas. Palavras simples, quatro opções.</p></li><li><span class="n">2</span><b>Acertaste? Rajada de palma.</b><p>O teu chi carrega e o mestre desse andar sai a voar. Sabe muito bem.</p></li><li><span class="n">3</span><b>Falhaste? Um golpe, uma lição.</b><p>Ninguém ralha contigo. O mestre acerta um golpe e explica porquê, em palavras simples. Depois tentas outra vez.</p></li></ol>
+<h2>O que tem lá dentro</h2>
+<ul class="list"><li><b>96 andares, 96 mestres.</b> Montanha Kung Fu, Porto Nevoeiro, Cidade Saldos, Rua Jackpot.</li><li><b>Mais de 2.400 perguntas.</b> Ações, ETFs, juros compostos, inflação, impostos, consumo, psicologia do investidor.</li><li><b>Casos suspeitos também.</b> "Retorno garantido", grupos de dicas quentes, burlas telefónicas. Reconheces mais depressa depois de veres como funcionam.</li><li><b>Cartas de conceito.</b> Cada resposta certa vira uma carta. O teu diário de treino enche-se. Sem gacha.</li><li><b>Os teus números.</b> Introduz o teu salário ou poupanças e recebe perguntas feitas à tua medida. Os números nunca saem do teu telemóvel.</li><li><b>61 acessórios.</b> Chapéus, roupas, um amigo em cima da cabeça. Só com penas ganhas no jogo.</li></ul>
+<h2>Fora da torre</h2>
+<ul class="list"><li>Pergunta do Dia: uma por dia, trinta segundos.</li><li>O Dojo: Torre Infinita, Duelo Relâmpago, Escada Dourada, Desafio Semanal, Beco Suspeito.</li><li>Termina uma região e ganha um certificado no jogo. Há cartas para partilhar e exibir.</li></ul>
+<h2>Pagas uma vez</h2>
+<div class="box"><p>Os 24 andares da Montanha Kung Fu, a Pergunta do Dia e as cartas de partilha ficam grátis. O <b>Full Pass</b> é uma única compra que abre os outros 72 andares e todo o Dojo, para sempre. Sem anúncios, sem subscrição, as penas nunca estão à venda.</p><p class="easy">Funciona sem internet. Sem conta, sem login. Coreano e inglês, à escolha nas Definições.</p></div>
+<h2>Bom saber</h2>
+<p class="know">O Owl Tower é um jogo de educação financeira, feito para aprender e divertir. Não é aconselhamento financeiro e não recomenda comprar ou vender qualquer ação ou produto. Regras, impostos e valores mudam, por isso confirma fontes oficiais antes de uma decisão real.</p>
+<div class="end"><p class="big">Pronto para <em>subir?</em></p><p class="sub">Android já disponível. iPhone a caminho.</p><div class="stores"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.owltower" rel="noopener"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small>Disponível no</small><strong>Google Play</strong></span></a><span class="apple" aria-disabled="true"><svg viewBox="0 0 24 28" aria-hidden="true"><path d="M19.6 14.9c0-3 2.5-4.5 2.6-4.6-1.4-2.1-3.6-2.4-4.4-2.4-1.9-.2-3.7 1.1-4.6 1.1-1 0-2.4-1.1-4-1-2 0-3.9 1.2-5 3-2.1 3.7-.5 9.1 1.5 12.1 1 1.5 2.2 3.1 3.8 3 1.5-.1 2.1-1 3.9-1s2.4 1 4 .9c1.7 0 2.7-1.5 3.7-3 1.2-1.7 1.6-3.3 1.7-3.4-.1 0-3.2-1.2-3.2-4.7zM16.6 5.8c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.5 1.8-.8.9-1.4 2.3-1.3 3.7 1.4.1 2.8-.7 3.6-1.7z"/></svg><span class="lbl"><small>App Store</small><strong>Em breve</strong></span></span></div></div>
 <p class="links"><a href="support/">Suporte</a> · <a href="privacy/">Política de Privacidade</a> · <a href="mailto:hello@gatinhoreguila.com">hello@gatinhoreguila.com</a></p>
 <p class="meta">Feito no Porto pela Gatinho Reguila.</p>
+</div>
 </section>
 </main>
 <footer class="wrap foot">
 <p><a href="support/"><span class="en">Support</span><span class="ko">지원</span><span class="pt">Suporte</span></a> · <a href="privacy/"><span class="en">Privacy Policy</span><span class="ko">개인정보 처리방침</span><span class="pt">Política de Privacidade</span></a></p>
 <p>© 2026 <a href="../">Gatinho Reguila</a>, Unipessoal Lda · Porto, Portugal</p>
 </footer>
-<script>(function(){var r=document.documentElement,K="grgs.lang";function set(l){r.setAttribute("data-lang",l);r.lang=l==="pt"?"pt-PT":l;document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.lang===l))});try{localStorage.setItem(K,l)}catch(e){}}var s=r.getAttribute("data-lang")||"en";set(s);document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.lang)})})})();</script>
+<div class="dock" aria-hidden="true"><a class="play" href="https://play.google.com/store/apps/details?id=com.gatinhoreguila.owltower" rel="noopener" tabindex="-1"><svg viewBox="0 0 30 32" aria-hidden="true"><path d="M1.2 1.1C.5 1.8.1 2.9.1 4.3v23.4c0 1.4.4 2.5 1.1 3.2l.2.2L14.5 18v-.3L1.4.9l-.2.2z" fill="#4285F4"/><path d="M19 22.6 14.5 18v-.3l4.5-4.5.1.1 5.3 3c1.5.9 1.5 2.3 0 3.1l-5.3 3-.1.2z" fill="#FBBC04"/><path d="M19.1 22.4 14.5 17.9 1.2 31.1c.5.5 1.3.6 2.2.1l15.7-8.8" fill="#EA4335"/><path d="M19.1 13.3 3.4.4C2.5-.1 1.7 0 1.2.5l13.3 13.3 4.6-4.5z" fill="#34A853"/></svg><span class="lbl"><small><span class="en">Get it on</span><span class="ko">다운로드</span><span class="pt">Disponível no</span></small><strong>Google Play</strong></span></a></div>
+<script>(function(){var r=document.documentElement,K="grgs.lang";function set(l){r.setAttribute("data-lang",l);r.lang=l==="pt"?"pt-PT":l;document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.lang===l))});try{localStorage.setItem(K,l)}catch(e){}}set(r.getAttribute("data-lang")||"en");document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.lang)})});
+var dock=document.querySelector(".dock");function onS(){var sec=document.querySelector("main>section[lang='"+(r.getAttribute("data-lang")==="pt"?"pt-PT":r.getAttribute("data-lang"))+"']"),hero=sec&&sec.querySelector(".hero"),end=sec&&sec.querySelector(".end");if(!hero)return;var past=hero.getBoundingClientRect().bottom<0,atEnd=end&&end.getBoundingClientRect().top<innerHeight;dock.classList.toggle("on",past&&!atEnd)}addEventListener("scroll",onS,{passive:true});onS();
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){v.play&&v.play().catch(function(){})}else{v.pause&&v.pause()}})},{threshold:.25});document.querySelectorAll("video").forEach(function(v){io.observe(v)})}})();</script>
 </body>
 </html>
